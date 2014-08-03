@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
     self.create(provider: auth_hash[:provider],
                 uid: auth_hash[:uid],
                 name: auth_hash[:info][:name],
-                email: auth_hash[:info][:email]
+                email: auth_hash[:info][:email],
+                image: auth_hash[:info][:image]
                 )
   end
 
