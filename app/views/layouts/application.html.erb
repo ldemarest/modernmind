@@ -27,7 +27,7 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><%= link_to current_user.name, user_path(current_user) %></li>
-                <li><% current_user.image%></li>
+                <li><img src = <%= current_user.image%>></li>
 
                 <li><%= link_to "Log Out", signout_path %></li>
             <% else %>
