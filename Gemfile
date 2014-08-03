@@ -50,12 +50,14 @@ group :test, :development do
   gem "pry"
   gem "guard-rspec", require: false
   gem "thin"
+  gem "figaro"
 end
 
 group :production do
   gem "pg"
   gem "google-analytics-rails"
   gem "rails_12factor"
+  gem "figaro"
 end
 
 gem "bootstrap-sass", "~> 3.1.1"
