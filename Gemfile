@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'figaro'
+gem 'omniauth'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,12 +50,14 @@ group :test, :development do
   gem "pry"
   gem "guard-rspec", require: false
   gem "thin"
+  gem "figaro"
 end
 
 group :production do
   gem "pg"
   gem "google-analytics-rails"
   gem "rails_12factor"
+  gem "figaro"
 end
 
 gem "bootstrap-sass", "~> 3.1.1"
