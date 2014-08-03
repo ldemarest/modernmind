@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :minds
+  has_many :neurons, :through => :minds
+
 
   def self.create_from_omniauth(auth_hash)
     self.create(provider: auth_hash[:provider],
