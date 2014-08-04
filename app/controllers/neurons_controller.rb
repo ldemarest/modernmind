@@ -4,6 +4,10 @@ class NeuronsController < ApplicationController
   end
 
   def create
+    respond_to do |format|
+      format.js render :text => "hello"
+    end
 
   end
+  
 end
