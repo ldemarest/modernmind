@@ -1,35 +1,27 @@
-<h1>Listing users</h1>
+<h1>LOGO</h1>
 
-
-   <canvas id="processing-canvas"  ></canvas>
+<canvas id="processing-canvas"  ></canvas>
    
-   <script type="text/processing" data-processing-target="processing-canvas">
-
-
+<script type="text/processing" data-processing-target="processing-canvas">
 int prevX, prevY = 0;
 
 void setup(){
-  size(6000,400);
+  size(1000,400);
   background(255);
   stroke(1);
   strokeWeight(1);
+  rect(1,1,998, 398)
+  line(100,1,100,398)
   smooth();
-  rect(0,0,5999, 399)
 }
 
 void draw(){
-
   if ( mousePressed && mouseX > 0 ) {
     line(mouseX,mouseY,prevX,prevY);
   }
-
   prevX = mouseX;
   prevY = mouseY;
-
 }
-
-
    </script>
-
 <br>
 
