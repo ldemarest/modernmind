@@ -1,0 +1,58 @@
+<canvas id ="myCanvas"> </canvas>
+<script type="text/processing" data-processing-target="myCanvas">
+int prevX, prevY = 0;
+
+
+void setup(){
+  size(1000,400);
+  background(255);
+  stroke(1);
+  strokeWeight(1);
+  rect(1,1,998, 398)
+  line(100,1,100,398)
+  smooth();
+}
+
+void draw(){
+  if ( mousePressed && mouseX > 0 ) {
+    line(mouseX,mouseY,prevX,prevY);
+  }
+  prevX = mouseX;
+  prevY = mouseY;
+}
+   </script>
+
+
+<script>
+      function loadImages(sources, callback) {
+        var images = {};
+        var loadedImages = 0;
+        var numImages = 0;
+        // get num of sources
+        for(var src in sources) {
+          numImages++;
+        }
+        for(var src in sources) {
+          images[src] = new Image();
+          images[src].onload = function() {
+            if(++loadedImages >= numImages) {
+              callback(images);
+            }
+          };
+          images[src].src = sources[src];
+        }
+      }
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      var sources = {
+        sketch: "data:image/png;base64,<%= @neuron%>"
+      };
+
+      loadImages(sources, function(images) {
+        context.drawImage(images.sketch, 0,0, 1000, 400);
+      });
+
+</script>
+
+
