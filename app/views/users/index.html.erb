@@ -1,17 +1,16 @@
 <h1>LOGO</h1>
 
-<canvas id="processing-canvas"  ></canvas>
+<canvas id="processing-canvas"></canvas>
    
 <script type="text/processing" data-processing-target="processing-canvas">
 int prevX, prevY = 0;
-var numberPeople = 5;
 
 void setup(){
   size(1000,400);
   background(255);
   stroke(1);
   strokeWeight(1);
-  rect(1,1,998, 398)
+  rect(1,1,998, 398);
   line(100,1,100,398)
   smooth();
 }

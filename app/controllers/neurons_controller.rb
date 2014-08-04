@@ -4,7 +4,6 @@ class NeuronsController < ApplicationController
   end
 
   def create
-    binding.pry
     # @user = User.find(session[:user_id]) if session[:user_id]
 
     # unless @user.neurons.find_by(neuron: params[:id])
@@ -23,9 +22,8 @@ class NeuronsController < ApplicationController
     end
   end
 
-    def zip
+  def zip
     @neuron = Neuron.all.first.image
-
   end
 
   private
