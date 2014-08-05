@@ -8,4 +8,11 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def login
+    
+    
+
+
+  end
+
 end
