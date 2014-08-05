@@ -21,6 +21,7 @@ class MindsController < ApplicationController
   end
 
   def show
+    @mind = Mind.find_by(params[:id])
 
   end
 
