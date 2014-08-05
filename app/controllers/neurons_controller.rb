@@ -23,9 +23,8 @@ class NeuronsController < ApplicationController
     end
   end
 
-    def zip
+  def zip
     @neuron = Neuron.all.first.image
-
   end
 
   private
