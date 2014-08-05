@@ -4,10 +4,7 @@ class NeuronsController < ApplicationController
   end
 
   def create
-
     @neuron = Neuron.new(image: params[:image])
-
-   
     respond_to do |format|
       if @neuron.save
         format.json { render json: @neuron}
@@ -17,17 +14,13 @@ class NeuronsController < ApplicationController
     end
   end
 
-
-    def zip
+  def zip
     @neuron = Neuron.last.image
-
+  end
 
   private
 
   def neuron_params
     params.require(:neuron).permit(:contributor_id, :name, :id, :image)
-  end 
-
-
-
+  end
 end
