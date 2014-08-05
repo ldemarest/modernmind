@@ -2,7 +2,8 @@ class MindsController < ApplicationController
 
   def new
     @mind = Mind.new
-    2.times{@mind.neurons.build}
+   
+  
   end
 
   def index
@@ -11,9 +12,11 @@ class MindsController < ApplicationController
   end
 
   def create
-    @mind = Mind.create(mind_params)
     binding.pry
+    @mind = Mind.create(mind_params)
+    neuron = Neuron.create(mind_params[:neuron])
     redirect_to index
+
 
   end
 
@@ -22,7 +25,7 @@ class MindsController < ApplicationController
   private
   
   def mind_params
-    params.require(:mind).permit( :name)
+    params.require(:mind).permit(:name)
   end 
 
 
