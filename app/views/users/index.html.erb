@@ -1,25 +1,27 @@
 <br>
 <br>
 <br>
-<canvas style="position: relative; left: -900px" display="block" id="processing-canvas2" width="1000px;" height="40px;" ></canvas>
-<canvas style="position: absolute; left: 100px;" display="block" id="processing-canvas" ></canvas> 
+<canvas style="position: relative; left: -900px" display="block" id="processing-canvas" width="1000px;" height="40px;" ></canvas>
+<canvas style="position: absolute; left: 100px;" display="block" id="processing-canvas2" ></canvas> 
    
 <script type="text/processing" data-processing-target="processing-canvas">
+  int prevX, prevY = 0;
+  void setup(){
+    size(1000,400);
+    background(255);
+    stroke(1);
+    strokeWeight(1);
+    rect(1,1,998, 398)
+    line(900,1,900,398)
+    smooth();
+  }
 
-void setup(){
-  size(1000,400);
-  background(255);
-  stroke(1);
-  strokeWeight(1);
-  rect(1,1,998, 398);
-  line(100,1,100,398)
-  smooth();
-}
-
-void draw(){
-  if ( mousePressed && mouseX > 0 ) {
-    line(mouseX,mouseY,prevX,prevY);
-
+  void draw(){
+    if ( mousePressed && mouseX > 0 ) {
+      line(mouseX,mouseY,prevX,prevY);
+    }
+    prevX = mouseX;
+    prevY = mouseY;
   }
 </script>
 
@@ -43,11 +45,9 @@ void draw(){
     });
   }
 </script>
-
+<br>
 <script type="text/processing" data-processing-target="processing-canvas2">
   int prevX, prevY = 0;
-  var numberPeople = 5;
-
   void setup(){
     size(1000,400);
     background(255);
