@@ -1,9 +1,3 @@
-<h1>LOGO</h1>
-
-<canvas id="processing-canvas"  ></canvas>
-   
-
-   <script>
    $('submit').click(function(){
    function saveDrawing(){
 
@@ -24,6 +18,3 @@
     });
    }
  });
-   </script>
-<br>
-<button id="save_button" onclick='saveDrawing()'>Save</button>
