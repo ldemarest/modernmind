@@ -2,6 +2,7 @@ class MindsController < ApplicationController
 
   def new
     @mind = Mind.new
+    2.times{@mind.neurons.build}
   end
 
   def index

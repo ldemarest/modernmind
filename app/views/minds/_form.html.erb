@@ -2,7 +2,6 @@
   <% if @mind.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mind.errors.count, "error") %> prohibited this mind from being saved:</h2>
-
       <ul>
       <% @mind.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -15,7 +14,23 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="actions">
+
+
+
+    <%= f.fields_for :neurons  do |neurons_form| %>
+        <%= neurons_form.label :name, "neuron name" %>
+      <%= neurons_form.text_field :name %>
+        <%= neurons_form.text_field :image %>
+
+  <% end %>
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+
+
+
+
