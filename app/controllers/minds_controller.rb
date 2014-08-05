@@ -2,7 +2,7 @@ class MindsController < ApplicationController
 
   def new
     @mind = Mind.new
-   
+
   
   end
 
@@ -12,14 +12,17 @@ class MindsController < ApplicationController
   end
 
   def create
-    binding.pry
+    
     @mind = Mind.create(mind_params)
-    neuron = Neuron.create(mind_params[:neuron])
-    redirect_to index
+    @mind.update(:creator_id => current_user.id)
 
-
+    # neuron = Neuron.create(mind_params[:neuron])
+    redirect_to user_path(current_user)
   end
 
+  def show
+
+  end
 
 
   private
