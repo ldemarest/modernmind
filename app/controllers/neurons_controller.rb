@@ -20,11 +20,11 @@ class NeuronsController < ApplicationController
   end
 
   def zip
-    @neuron = Neuron.last.image
+    @neuron = Neuron.find(7).image
   end
 
   private
->>>>>>> master
+
 
   def neuron_params
     params.require(:neuron).permit(:contributor_id, :name, :id, :image)

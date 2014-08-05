@@ -16,7 +16,7 @@
 //= require jquery_ujs
 //= require processing
 //= require bootstrap
-//= require loadimage
+
 //= require saveimage
 
 

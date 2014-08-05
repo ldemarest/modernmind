@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>Modernmind</title>
-  <%= javascript_include_tag 'drawingcanvas', {type:"text/processing", :"data-processing-target" =>"processing-canvas"} %>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+   <%= javascript_include_tag 'drawingcanvas', {type:"text/processing", :"data-processing-target" =>"processing-canvas"} %>
 
   <%= analytics_init if Rails.env.production? %>
 </head>

@@ -2,12 +2,14 @@
 <br>
 <br>
 <br>
-<canvas style="position: relative; left: -900px;" id ="myCanvas"> </canvas>
+<canvas id ="processing-canvas"> </canvas>
+
+
+<script >
 
 
 
-
-<script>
+$(document).ready(function() {
       function loadImages(sources, callback) {
         var images = {};
         var loadedImages = 0;
@@ -26,17 +28,17 @@
           images[src].src = sources[src];
         }
       }
-      var canvas = document.getElementById('myCanvas');
+      var canvas = document.getElementById('processing-canvas');
       var context = canvas.getContext('2d');
 
       var sources = {
         sketch: "data:image/png;base64,<%= @neuron%>"
-      };
+      }
 
       loadImages(sources, function(images) {
         context.drawImage(images.sketch, 0,0, 1000, 400);
       });
-
+});
 
 </script>
 
