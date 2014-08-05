@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  resources :neurons
-
-  resources :minds
 
   resources :users
+  resources :minds do
+    resources :neurons
+  end
 
+  root 'users#index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/about' => 'static_pages#about'
-  root 'users#index'
-
+  get '/zip' => 'neurons#zip'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
