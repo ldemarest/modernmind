@@ -4,13 +4,7 @@ class NeuronsController < ApplicationController
   end
 
   def create
-    
-    # @user = User.find(session[:user_id]) if session[:user_id]
 
-    # unless @user.neurons.find_by(neuron: params[:id])
-    #   @neuron = Neuron.create(neuron_params) 
-    #   @user.neurons << @neruon
-    # end
     @neuron = Neuron.new(image: params[:image])
 
    
@@ -23,10 +17,10 @@ class NeuronsController < ApplicationController
     end
   end
 
+
     def zip
     @neuron = Neuron.last.image
 
-  end
 
   private
 

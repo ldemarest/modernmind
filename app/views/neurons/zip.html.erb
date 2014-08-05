@@ -1,5 +1,44 @@
 
-<canvas id ="processing-canvas"> </canvas>
+<br>
+<br>
+<br>
+<canvas style="position: relative; left: -900px;" id ="myCanvas"> </canvas>
+
+
+
+
+<script>
+      function loadImages(sources, callback) {
+        var images = {};
+        var loadedImages = 0;
+        var numImages = 0;
+        // get num of sources
+        for(var src in sources) {
+          numImages++;
+        }
+        for(var src in sources) {
+          images[src] = new Image();
+          images[src].onload = function() {
+            if(++loadedImages >= numImages) {
+              callback(images);
+            }
+          };
+          images[src].src = sources[src];
+        }
+      }
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      var sources = {
+        sketch: "data:image/png;base64,<%= @neuron%>"
+      };
+
+      loadImages(sources, function(images) {
+        context.drawImage(images.sketch, 0,0, 1000, 400);
+      });
+
+
+</script>
 
 
 
