@@ -5,8 +5,6 @@ class NeuronsController < ApplicationController
 
   def create
 
-    binding.pry
-
     @neuron = Neuron.new(neuron_params)
     @neuron.save
     @neuron.update(:user_id => current_user.id)
@@ -19,8 +17,6 @@ class NeuronsController < ApplicationController
         format.json { render json: "Error", status: :unprocessable_entity }
       end
     end
-
-
 
   end
 

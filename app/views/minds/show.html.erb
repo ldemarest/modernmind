@@ -1,21 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-
   <strong><%= @mind.name%></strong>
+<button id="save_button" style="z=1" onclick="saveDrawing()">Save</button>
 <div width:200%>
   <table>
   </tr>
- 
 <td>
   <img src="data:image/png;base64,<%=@neurons.image%>" style = "position: absolute;
-left: 0px;
-top: 100px;
-z: 1;
-height: 400px;
-width: 200px;">
-
+	left: -700px;
+	top: 100px;
+	z: 1;
+	height: 400px;
+	width: 900px;">
  </td>
-
  <td>
  <canvas id ="processing-canvas"></canvas>
  </td>
@@ -23,10 +20,4 @@ width: 200px;">
 </table>
 </div>
  
-
-<br>
-<button id="save_button" onclick="saveDrawing()">Save</button>
-
-<img class="lob" src="https://libcom.org/files/images/library/black-square.jpg">
-
-}
+<img class="lob" src="http://img1.wikia.nocookie.net/__cb20061003200043/uncyclopedia/images/4/44/White_square.png">
