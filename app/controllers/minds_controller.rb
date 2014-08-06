@@ -15,6 +15,10 @@ class MindsController < ApplicationController
     @mind = Mind.create(mind_params)
     @mind.neurons.build(:user_id => current_user.id)
     @mind.save
+    @user = current_user
+    @user.update(:mind_maker => true)
+    @user.save
+
     # @mind.update(:creator_id => current_user.id)
     # neuron = Neuron.create(mind_params[:neuron])
     redirect_to user_path(current_user)
@@ -24,6 +28,8 @@ class MindsController < ApplicationController
 
     @mind = Mind.find(params[:id])
     @neurons = @mind.neurons.last
+    @users = @mind.users
+    # binding.pry
 
   end
 

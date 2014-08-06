@@ -3,7 +3,7 @@ FUCK YOU <%=@user.name%>
 <%= form_for(@mind) do |f| %>
   <%=f.label :name %>
   <%= f.text_field :name %>
-  <%= f.submit %>
+  <%= f.submit :class => "create_mind" %>
   <%end%>
 
 <ul>
