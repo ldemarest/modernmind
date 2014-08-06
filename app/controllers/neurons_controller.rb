@@ -5,11 +5,10 @@ class NeuronsController < ApplicationController
 
   def create
 
-    respond_to do |format|
-      format.js render :text => "hello"
-    end
+    binding.pry
 
-    @neuron = Neuron.new(image: params[:image])
+    @neuron = Neuron.new(neuron_params)
+
     respond_to do |format|
       if @neuron.save
         format.json { render json: @neuron}
@@ -17,6 +16,9 @@ class NeuronsController < ApplicationController
         format.json { render json: "Error", status: :unprocessable_entity }
       end
     end
+
+
+
   end
 
   def zip
@@ -25,9 +27,8 @@ class NeuronsController < ApplicationController
 
   private
 
-
   def neuron_params
-    params.require(:neuron).permit(:contributor_id, :name, :id, :image)
+    params.require(:neuron).permit(:image,:mind_id)
   end
   
 end

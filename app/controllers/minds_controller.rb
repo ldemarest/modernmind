@@ -21,8 +21,12 @@ class MindsController < ApplicationController
   end
 
   def show
+  
+
 
   end
+
+
 
 
   private
