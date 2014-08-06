@@ -18,7 +18,6 @@ $(document).ready(function() {
         }
     }
     var canvas = document.getElementById('front_page');
-    // var canvas = document.getElementById('front_page');
     var context = canvas.getContext('2d');
 
     var sources = {

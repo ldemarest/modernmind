@@ -18,7 +18,4 @@
 //= require bootstrap
 
 //= require saveimage
-
-
-
-
+//= require users

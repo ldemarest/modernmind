@@ -33,3 +33,28 @@ body {
 .theme-showcase > p > .btn {
   margin: 5px 0;
 }
+
+  canvas {
+      position: absolute;
+      left: 200px;
+      top: 100px;
+      z: -1;
+  }
+
+  img.lob {
+      position: absolute;
+      left: 0px;
+      top: 100px;
+      z: 2;
+      height: 400px;
+      width: 100px;
+  }
+
+  img.lobs {
+      position: absolute;
+      left: 900px;
+      top: 100px;
+      z: 2;
+      height: 400px;
+      width: 100px;
+  }

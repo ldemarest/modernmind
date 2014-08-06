@@ -28,7 +28,9 @@ class NeuronsController < ApplicationController
   private
 
   def neuron_params
-    params.require(:neuron).permit(:image,:mind_id)
+
+    params.require(:neuron).permit(:name, :id, :image, :mind_id, :user_id)
+
   end
   
 end
