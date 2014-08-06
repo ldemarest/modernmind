@@ -12,11 +12,10 @@ class MindsController < ApplicationController
   end
 
   def create
-    
     @mind = Mind.create(mind_params)
     @mind.neurons.build(:user_id => current_user.id)
+    @mind.save
     # @mind.update(:creator_id => current_user.id)
-    # @mind.update(:user_id => current_user.id)
     # neuron = Neuron.create(mind_params[:neuron])
     redirect_to user_path(current_user)
   end

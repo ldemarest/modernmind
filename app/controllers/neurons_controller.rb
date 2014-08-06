@@ -27,7 +27,7 @@ class NeuronsController < ApplicationController
 
 
   def neuron_params
-    params.require(:neuron).permit(:contributor_id, :name, :id, :image)
+    params.require(:neuron).permit(:name, :id, :image, :mind_id, :user_id)
   end
   
 end
