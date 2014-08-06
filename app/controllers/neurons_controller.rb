@@ -8,6 +8,9 @@ class NeuronsController < ApplicationController
     binding.pry
 
     @neuron = Neuron.new(neuron_params)
+    @neuron.save
+    @neuron.update(:user_id => current_user.id)
+
 
     respond_to do |format|
       if @neuron.save

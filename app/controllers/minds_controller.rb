@@ -22,8 +22,8 @@ class MindsController < ApplicationController
 
   def show
 
-    @mind = Mind.find_by(params[:id])
-
+    @mind = Mind.find(params[:id])
+    @neurons = @mind.neurons.last
 
   end
 
