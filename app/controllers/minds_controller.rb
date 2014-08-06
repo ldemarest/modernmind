@@ -21,8 +21,12 @@ class MindsController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
   
 
+=======
+    @mind = Mind.find_by(params[:id])
+>>>>>>> a1c36bf0549dfeb825270f93103b87edf7d60b5b
 
   end
 
