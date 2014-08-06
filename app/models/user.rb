@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :user_minds
-  has_many :minds, :through => :user_minds, :foreign_key => :creator_id
+  has_many :minds, :foreign_key => :creator_id
   has_many :neurons, :foreign_key => :contributor_id
 
 
