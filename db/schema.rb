@@ -11,22 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804213332) do
+ActiveRecord::Schema.define(version: 20140806144836) do
 
   create_table "minds", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "creator_id"
   end
 
   create_table "neurons", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "contributor_id"
     t.text     "image"
     t.integer  "mind_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
