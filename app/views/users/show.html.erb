@@ -1,14 +1,16 @@
-<%=@user.name%>
+
+<%=@user.name%> IS A STAR
+
 
 <%= form_for(@mind) do |f| %>
   <%=f.label :name %>
   <%= f.text_field :name %>
-  <%= f.submit %>
+  <%= f.submit :class => "create_mind" %>
   <%end%>
 
 <ul>
 
-  <% @minds.uniq.each  do |mind| %>
+  <% @minds.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%>
   </li>

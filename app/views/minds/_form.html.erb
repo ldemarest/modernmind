@@ -15,12 +15,6 @@
     <%= f.text_field :name %>
   </div>
 
-    <%= f.fields_for :neuron, Neuron.new  do |neurons_form| %>
-        <%= neurons_form.label :name, "neuron name" %>
-      <%= neurons_form.text_field :name %>
-        <%= neurons_form.text_field :image %>
-
-  <% end %>
     <div class="actions">
     <%= f.submit %>
   </div>
