@@ -32,17 +32,22 @@ class MindsController < ApplicationController
     # binding.pry
     @mind = Mind.find(params[:id])
     @lastneuron = @mind.neurons.last
-    @neurons = @mind.neurons  
+
+    @neurons = @mind.neurons 
+     
     if @neurons.size >= 4
       redirect_to completedmind_path
     end
+
   end
 
   def completedmind
     
     @mind = Mind.find(params[:id])
     @neurons = @mind.neurons
+
   end
+
 
   private
   

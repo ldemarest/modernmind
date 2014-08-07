@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   get '/zip' => 'neurons#zip'
   get '/minds/:id/completedmind' => 'minds#completedmind', :as => :completedmind
+  get '/greatminds' => 'static_pages#greatminds', :as => :greatminds
+  get '/publicminds' => 'static_pages#publicminds', :as => :publicminds
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,9 @@
+<ul>
+  <% @minds.each do |mind| %>
+  <li>
+  <%= link_to mind.name, mind_path(mind) %>
+</li>
+  <% end %>
+
+
+</ul>

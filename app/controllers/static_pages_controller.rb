@@ -12,4 +12,17 @@ class StaticPagesController < ApplicationController
     
   end
 
+  def publicminds
+
+      @minds = Mind.all.where(:public => true)
+
+  end
+
+  def greatminds
+    
+  
+
+  end
+
+
 end
