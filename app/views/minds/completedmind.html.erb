@@ -1,0 +1,24 @@
+<ul>
+  <%@neurons.each do |neuron|%>
+  <li> 
+  <%= neuron.name %> made by <%= neuron.user_id %>
+  </li>
+  <%end%>
+
+</ul>
+
+
+<table>
+  <tr>
+     
+     <%@neurons.each do |neuron|%>
+     <% i = 1 %>
+   <td id = "neuron-<%=i%>" >
+      <img src = "data:image/png;base64,<%=neuron.image%>"> <br> <br><br><br><br><br>
+      <% i+= 1 %>
+    </td>
+    <%end%>
+    
+  </tr>
+
+</table>

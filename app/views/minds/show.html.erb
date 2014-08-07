@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-  <strong><%= @mind.name%></strong>
-<button id="save_button" style="z=1" onclick="saveDrawing()">Save</button>
-<div width:200%>
+  <strong><%= @mind.name%> you have <%= 4- @neurons.size %> left </strong> <br>
+
+
+
+ 
+
   <table>
   </tr>
 <td>
-  <img id = "neurons" src="data:image/png;base64,<%=@neurons.image%>" style = "position: absolute;
+  <img id = "neurons" src="data:image/png;base64,<%=@lastneuron.image%>" style = "position: absolute;
 	left: -700px;
 	top: 100px;
 	z: 1;
@@ -17,7 +20,15 @@
  <canvas id ="processing-canvas"></canvas>
  </td>
 </tr>
+<tr>
+
+<input id = "neuron-name" style = "margin-top: 35%; margin-left:40%" type= text>
+
+<button id="save_button" style = "margin-top: 2%; margin-left:40%" onclick="saveDrawing()">Submit My Neuron</button>
+
+</tr>
 </table>
-</div>
+
+
  
 <img class="lob" src="http://img1.wikia.nocookie.net/__cb20061003200043/uncyclopedia/images/4/44/White_square.png">

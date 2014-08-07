@@ -8,7 +8,7 @@ FUCK YOU <%=@user.name%>
 
 <ul>
 
-  <% @minds.each  do |mind| %>
+  <% @minds.uniq.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%>
   </li>
