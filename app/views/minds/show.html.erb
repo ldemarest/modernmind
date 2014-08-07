@@ -7,10 +7,10 @@
   <table>
   </tr>
 <td>
-  <img id = "neurons" src="data:image/png;base64,<%=@lastneuron.image%>" style = "position: absolute;
+  <img id = "neurons" src="data:image/png;base64," style = "position: absolute;
 	left: -700px;
 	top: 100px;
-	z: 1;
+	z-index: 1;
 	height: 400px;
 	width: 900px;  ">
  </td>
@@ -20,7 +20,7 @@
 </tr>
 <tr>
 
-<input id = "neuron-name" style = "margin-top: 35%; margin-left:40%" type= text>
+<input id = "neuron-name" style = "margin-top: 35%; margin-left:40%" text>
 
 <button id="save_button" style = "margin-top: 2%; margin-left:40%" onclick="saveDrawing()">Submit My Neuron</button>
 

@@ -1,4 +1,4 @@
-FUCK YOU <%=@user.name%>
+<%=@user.name%> IS A STAR
 
 <%= form_for(@mind) do |f| %>
   <%=f.label :name %>
@@ -8,7 +8,7 @@ FUCK YOU <%=@user.name%>
 
 <ul>
 
-  <% @minds.uniq.each  do |mind| %>
+  <% @minds.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%>
   </li>

@@ -13,7 +13,7 @@ class MindsController < ApplicationController
 
   def create
     @mind = Mind.create(mind_params)
-    @mind.neurons.build(:user_id => current_user.id)
+    @mind.user_minds.build(:user_id => current_user.id)
     @mind.save
     # @user = current_user
     # @user.update(:mind_maker => true)
@@ -29,7 +29,7 @@ class MindsController < ApplicationController
   end
 
   def show
-
+    # binding.pry
     @mind = Mind.find(params[:id])
     @lastneuron = @mind.neurons.last
     @neurons = @mind.neurons  
@@ -39,9 +39,9 @@ class MindsController < ApplicationController
   end
 
   def completedmind
+    
     @mind = Mind.find(params[:id])
-    @neurons = @mind.neurons[1..-1]
-
+    @neurons = @mind.neurons
   end
 
   private

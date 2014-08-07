@@ -6,13 +6,11 @@ class NeuronsController < ApplicationController
   def create
     binding.pry
 
-
     @neuron = Neuron.new(neuron_params)
-    @neuron.update(:user_id => current_user.id)
-    @neuron.save
-
-   
-
+    # @neuron.user_mind = current_user.id
+    @user_mind = UserMind.find_by_user_id_and_mind_id(current_user.id, user_mind_params[:mind_id]) || UserMind.create(:user_id => current_user.id, :mind_id => user_mind_params[:mind_id])
+    # @user_mind.user_id = current_user.id
+    @neuron.user_mind_id = @user_mind.id
 
     respond_to do |format|
       if @neuron.save
@@ -30,10 +28,15 @@ class NeuronsController < ApplicationController
 
   private
 
-  def neuron_params
+    def neuron_params
 
-    params.require(:neuron).permit(:name, :image, :mind_id)
+      params.require(:neuron).permit(:name, :image)
 
-  end
+    end
+
+    def user_mind_params
+
+      params.require(:user_mind).permit(:mind_id)
+    end
   
 end
