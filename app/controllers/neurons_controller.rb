@@ -4,10 +4,14 @@ class NeuronsController < ApplicationController
   end
 
   def create
+    binding.pry
+
 
     @neuron = Neuron.new(neuron_params)
-    @neuron.save
     @neuron.update(:user_id => current_user.id)
+    @neuron.save
+
+   
 
 
     respond_to do |format|
@@ -28,7 +32,7 @@ class NeuronsController < ApplicationController
 
   def neuron_params
 
-    params.require(:neuron).permit(:name, :id, :image, :mind_id, :user_id)
+    params.require(:neuron).permit(:name, :image, :mind_id)
 
   end
   

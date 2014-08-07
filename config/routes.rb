@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/about' => 'static_pages#about'
   get '/zip' => 'neurons#zip'
+  get '/minds/:id/completedmind' => 'minds#completedmind', :as => :completedmind
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

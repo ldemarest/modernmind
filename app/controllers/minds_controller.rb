@@ -31,21 +31,25 @@ class MindsController < ApplicationController
   def show
 
     @mind = Mind.find(params[:id])
-    @neurons = @mind.neurons.last
-    @users = @mind.users
-
-    # binding.pry
-
+    @lastneuron = @mind.neurons.last
+    @neurons = @mind.neurons  
+    if @neurons.size >= 4
+      redirect_to completedmind_path
+    end
   end
 
+  def completedmind
+    @mind = Mind.find(params[:id])
+    @neurons = @mind.neurons[1..-1]
 
-
+  end
 
   private
   
   def mind_params
     params.require(:mind).permit(:name)
   end 
+
 
 
 
