@@ -34,34 +34,31 @@ body {
   margin: 5px 0;
 }
 
-  canvas#processing-canvas {
-      position: absolute;
-      left: 200px;
-      top: 100px;
-      z: -1;
-  }
+canvas#processing-canvas {
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  z: -1;
+}
 
-  img.lob {
-      position: absolute;
-      left: 0px;
-      top: 100px;
-      z: 2;
-      height: 401px;
-      width: 150px;
-      pointer-events: none;
-  }
+.display_mind {
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  z: 2;
+  height: 401px;
+  width: 150px;
+  pointer-events: none;
+  background: white;
+}
 
-  #neurons {
-
--moz-user-select: none;
--khtml-user-select: none;
--webkit-user-select: none;
-user-select: none;
--moz-user-drag: none;
--khtml-user-drag: none;
--webkit-user-drag: none;
-user-drag: none;  
-
-
-
+#neurons {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-drag: none;
+  -khtml-user-drag: none;
+  -webkit-user-drag: none;
+  user-drag: none;  
   }
