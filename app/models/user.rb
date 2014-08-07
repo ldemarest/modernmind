@@ -19,9 +19,9 @@ class User < ActiveRecord::Base
     where(provider: provider, uid: uid).first
   end
 
-  def completed_minds
+  def complete_minds
     self.minds.select do |mind|
-      if mind.neurons.length < 4
+      if mind.neurons.length >= 4
         mind
       end
     end
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   def incomplete_minds
     self.minds.select do |mind|
-      if mind.neurons.length >= 4
+      if mind.neurons.length < 4
         mind
       end
     end
