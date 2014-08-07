@@ -1,5 +1,5 @@
 
-<%=@user.name%> IS A STAR
+FUCK YOU <%=@user.name%>
 
 
 <%= form_for(@mind) do |f| %>
@@ -10,9 +10,9 @@
 
 <ul>
     <strong> incomplete minds </strong>
-  <% @minds.each  do |mind| %>
+  <% @user.completed_minds.each  do |mind| %>
   <li>
-  <%=link_to mind.name, mind%>
+    <%=link_to mind.name, mind%>
   </li>
   <%end%>
 
@@ -20,7 +20,7 @@
 
 <ul >
   <strong> complete minds </strong>
- <% @minds.each  do |mind| %>
+ <% @user.incomplete_minds.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%>
   </li>
