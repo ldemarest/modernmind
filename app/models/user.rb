@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
-  # has_many :minds, :foreign_key => :creator_id
-  # has_many :neurons, :foreign_key => :contributor_id
   has_many :user_minds
   has_many :minds, :through => :user_minds
   has_many :neurons, :through => :user_minds
 
+  @@complete_minds = []
+  @@incomplete_minds = []
 
   def self.create_from_omniauth(auth_hash)
     self.create(provider: auth_hash[:provider],
@@ -18,4 +18,22 @@ class User < ActiveRecord::Base
   def self.find_by_provider_and_uid(provider, uid)
     where(provider: provider, uid: uid).first
   end
+
+  def completed_minds
+    self.minds.select do |mind|
+      if mind.neurons.length < 4
+        mind
+      end
+    end
+
+  end
+
+  def incomplete_minds
+    self.minds.select do |mind|
+      if mind.neurons.length >= 4
+        mind
+      end
+    end
+  end
+
 end
