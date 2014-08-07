@@ -34,7 +34,7 @@ body {
   margin: 5px 0;
 }
 
-  canvas {
+  canvas#processing-canvas {
       position: absolute;
       left: 200px;
       top: 100px;
@@ -49,4 +49,19 @@ body {
       height: 401px;
       width: 150px;
       pointer-events: none;
+  }
+
+  #neurons {
+
+-moz-user-select: none;
+-khtml-user-select: none;
+-webkit-user-select: none;
+user-select: none;
+-moz-user-drag: none;
+-khtml-user-drag: none;
+-webkit-user-drag: none;
+user-drag: none;  
+
+
+
   }
