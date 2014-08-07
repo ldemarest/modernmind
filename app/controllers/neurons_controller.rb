@@ -11,6 +11,7 @@ class NeuronsController < ApplicationController
     # @user_mind.user_id = current_user.id
     @neuron.user_mind_id = @user_mind.id
 
+
     respond_to do |format|
       if @neuron.save
         format.json { render json: @neuron}
@@ -18,6 +19,8 @@ class NeuronsController < ApplicationController
         format.json { render json: "Error", status: :unprocessable_entity }
       end
     end
+
+   
 
   end
 

@@ -9,11 +9,23 @@
   <%end%>
 
 <ul>
-
+    <strong> incomplete minds </strong>
   <% @minds.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%>
   </li>
   <%end%>
+
+</ul>
+
+<ul >
+  <strong> complete minds </strong>
+ <% @minds.each  do |mind| %>
+  <li>
+  <%=link_to mind.name, mind%>
+  </li>
+  <%end%>
+
+
 
 </ul>

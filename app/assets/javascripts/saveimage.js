@@ -24,7 +24,7 @@
       contentType: 'application/json; charset=utf-8',
       dataType: 'json',
       success: function (msg) {
-          alert("Done, Picture Uploaded.");
+        alert("Done, Picture Uploaded.");
       }
 
       });
