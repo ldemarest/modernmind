@@ -4,7 +4,7 @@ class NeuronsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
 
     @neuron = Neuron.new(neuron_params)
     # @neuron.user_mind = current_user.id
