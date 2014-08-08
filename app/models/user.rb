@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   @@complete_minds = []
   @@incomplete_minds = []
 
+
   def self.create_from_omniauth(auth_hash)
     self.create(provider: auth_hash[:provider],
                 uid: auth_hash[:uid],
@@ -35,5 +36,8 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+
+
 
 end

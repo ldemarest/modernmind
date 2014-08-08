@@ -12,6 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require token-input
+ *= require token-input-mac
+ *= require token-input-facebook
+
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
@@ -39,6 +43,8 @@ canvas#processing-canvas {
   left: 200px;
   top: 100px;
   z: -1;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
 }
 
 .display_mind {
