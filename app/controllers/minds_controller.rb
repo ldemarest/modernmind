@@ -12,7 +12,7 @@ class MindsController < ApplicationController
   end
 
   def create
-    binding.pry
+
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
     @mind.save
