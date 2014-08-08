@@ -11,9 +11,14 @@ var colorWhite = #FFFFFF;
 var eraser = #FFEFD5;
 
 var strokeSmall = 1;
-var strokeMedium = 3;
-var strokeLarge = 5;
+var strokeMedium = 8;
+var strokeLarge = 23;
 
+var opacitySmall = 10;
+var opacityMedium = 100;
+var opacityLarge = 255;
+
+var alpha = opacityLarge;
 var curColor = colorBlack;
 var curStroke = strokeSmall;
 
@@ -22,35 +27,35 @@ var curStroke = strokeSmall;
   });
   
 
-  $("#color-red").click(function () {
+  $("#red").click(function () {
     curColor = colorRed;
   });
 
-  $("#color-orange").click(function () {
+  $("#orange").click(function () {
     curColor = colorOrange;
   });
 
-  $("#color-yellow").click(function () {
+  $("#yellow").click(function () {
     curColor = colorYellow;
   });
 
-  $("#color-green").click(function () {
+  $("#green").click(function () {
     curColor = colorGreen;
   });
 
-  $("#color-blue").click(function () {
+  $("#blue").click(function () {
     curColor = colorBlue;
   });
 
-  $("#color-purple").click(function () {
+  $("#purple").click(function () {
     curColor = colorPurple;
   });
 
-  $("#color-black").click(function () {
+  $("#black").click(function () {
     curColor = colorBlack;
   });
 
-  $("#color-white").click(function () {
+  $("#white").click(function () {
     curColor = colorWhite;
   });
 
@@ -70,6 +75,18 @@ var curStroke = strokeSmall;
     curStroke = strokeLarge;
   });
 
+  $("#opacity-small").click(function () {
+    alpha = opacitySmall;
+  });
+
+  $("#opacity-medium").click(function () {
+    alpha = opacityMedium;
+  });
+
+  $("#opacity-large").click(function () {
+    alpha = opacityLarge;
+  });
+
   function setup() {
        $p.size(900, 400);
        $p.background(255, 239, 213);
@@ -81,7 +98,7 @@ var curStroke = strokeSmall;
   setup = setup.bind($p);
 
    function draw() {
-       stroke(curColor);
+       stroke(curColor, alpha);
        strokeWeight(curStroke);
        if (mousePressed == true) {
            line(mouseX, mouseY, pmouseX, pmouseY);
