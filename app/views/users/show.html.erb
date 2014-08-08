@@ -11,6 +11,10 @@
     <%= f.radio_button :public, true, :checked => true  %>
     <%= f.label :public, "No" %>
     <%= f.radio_button :public, false%><br>
+   
+    <%= f.label :user_tokens, "Users" %> <br>
+    <%= f.text_field :user_tokens %>
+
   <%= f.submit %>
   <%end%>
   <br>
