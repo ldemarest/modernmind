@@ -1,9 +1,59 @@
-<br><br><br>
-<p style="float: center;">"Create a Mind."</p>
-<br>
-<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
 
-<canvas id="front_page" width="1150px" height="600px"></canvas>
+<p style="float: center;">"Create a Mind."</p>
+
+<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
+<br>
+<canvas id="scroller" width="2000%" height="600" style="  background: whiteSmoke;
+  display: block;
+  margin: 10px auto;" ></canvas>
+
+<script>
+window.requestAnimationFrame = function() {
+	return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		function(f) {
+			window.setTimeout(f,1e3/60);
+		}
+}();
+
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+var W = canvas.width;
+var H = canvas.height;
+
+// We want to move/slide/scroll the background
+// as the player moves or the game progresses
+
+// Velocity X
+var vx = 0;
+
+var img = new Image();
+img.src = 'http://www.stephenwiltshire.co.uk/images/Madrid_Panorama_by_Stephen_Wiltshire.jpg';
+
+(function renderGame() {
+	window.requestAnimationFrame(renderGame);
+	
+	ctx.clearRect(0, 0, W, H);
+	
+	ctx.fillStyle = '#333';
+	ctx.fillRect(0, 0, W, H);
+	
+	ctx.drawImage(img, vx, 50);
+	ctx.drawImage(img, img.width-Math.abs(vx), 50);
+	
+	if (Math.abs(vx) > img.width) {
+		vx = 0;
+	}
+	
+	vx -= 2;
+}());
+
+</script>
+
 <div id="container">
 <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
 <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
@@ -11,7 +61,7 @@
 <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
 <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
 </div>
-<br><br>
+
 <p style="float: center;">"Contribute a neuron."</p>
 <br>
 <img src="http://benfry.com/wp/wp-content/uploads/2008/06/bayle-worldmap.jpg" style="float: center;" >
