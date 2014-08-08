@@ -10,7 +10,7 @@ FUCK YOU <%=@user.name%>
 
 <ul>
     <strong> incomplete minds </strong>
-  <% @user.completed_minds.each  do |mind| %>
+  <% @incomplete.each  do |mind| %>
   <li>
     <%=link_to mind.name, mind%>
   </li>
@@ -20,7 +20,7 @@ FUCK YOU <%=@user.name%>
 
 <ul >
   <strong> complete minds </strong>
- <% @user.incomplete_minds.each  do |mind| %>
+ <% @complete.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%>
   </li>
