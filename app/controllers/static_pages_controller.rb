@@ -14,12 +14,15 @@ class StaticPagesController < ApplicationController
 
   def publicminds
 
-      @minds = Mind.all.where(:public => true)
+    @completed_minds = Mind.completed_minds
+
+    @incomplete_minds = Mind.incomplete_minds
 
   end
 
   def greatminds
-    
+
+  
   
 
   end
