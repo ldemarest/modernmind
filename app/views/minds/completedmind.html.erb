@@ -3,7 +3,8 @@
   <%@neurons.each do |neuron|%>
     <li> 
     <% @user = User.find(neuron.user_mind.user_id) %>
-    <a href="#neuron-<%=index%>"><%= neuron.name %></a> made by <%= @user.name %>
+    <a href="#neuron-<%=index%>" class="smoothScroll"><%= neuron.name %></a> made by <%= @user.name %>
+
     </li>
     <% index += 1 %>
   <%end%>

@@ -21,3 +21,4 @@
 //= require users
 //= require jquery.tokeninput
 //= require tokenfield
+//= require smoothscroll
