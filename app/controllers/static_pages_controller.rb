@@ -13,16 +13,16 @@ class StaticPagesController < ApplicationController
   end
 
   def publicminds
-    binding.pry
 
-      @minds = Mind.all.where(:public => true)
-      @completed_minds = @minds.completed_minds_public
-      @incomplete_minds = @minds.incomplete_minds_public
+    @completed_minds = Mind.completed_minds
+
+    @incomplete_minds = Mind.incomplete_minds
 
   end
 
   def greatminds
 
+  
   
 
   end
