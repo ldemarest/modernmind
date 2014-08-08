@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/minds/:id/completedmind' => 'minds#completedmind', :as => :completedmind
   get '/greatminds' => 'static_pages#greatminds', :as => :greatminds
   get '/publicminds' => 'static_pages#publicminds', :as => :publicminds
+  get '/error' => 'static_pages#error', :as => :error
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

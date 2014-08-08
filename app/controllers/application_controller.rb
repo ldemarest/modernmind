@@ -17,22 +17,6 @@ class ApplicationController < ActionController::Base
   end
 
   
-    helper_method def completed_minds_public
-    self.select do |mind|
-      if mind.neurons.length < 4
-        mind
-      end
-    end
-
-  end
-
-  helper_method def incomplete_minds_public
-    self.select do |mind|
-      if mind.neurons.length >= 4
-        mind
-      end
-    end
-  end
-
+  
   
 end
