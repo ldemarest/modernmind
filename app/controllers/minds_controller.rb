@@ -12,8 +12,6 @@ class MindsController < ApplicationController
   end
 
   def create
-    user_params
-
 
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)

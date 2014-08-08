@@ -22,4 +22,8 @@
 //= require users
 //= require fieldhide
 //= require tokenfield
+
 //= require upvote
+
+//= require smoothscroll
+
