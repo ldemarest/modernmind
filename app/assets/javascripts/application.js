@@ -15,7 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require processing
+//= require drawingcanvas
 //= require bootstrap
-
 //= require saveimage
 //= require users
