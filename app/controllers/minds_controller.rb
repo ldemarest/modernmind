@@ -12,7 +12,6 @@ class MindsController < ApplicationController
   end
 
   def create
-    binding.pry
 
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
@@ -54,6 +53,10 @@ class MindsController < ApplicationController
     
     @mind = Mind.find(params[:id])
     @neurons = @mind.neurons
+    # @neurons.each do |neuron|
+    #   @user_name = User.find(neuron.user_mind.user_id).name 
+    #   binding.pry
+    # end
 
   end
 

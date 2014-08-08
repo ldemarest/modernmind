@@ -1,9 +1,12 @@
 <ul>
+  <% index = 1 %>
   <%@neurons.each do |neuron|%>
-  <li> 
- <%= neuron.name %> made by <%= User.find(neuron.user_mind.user_id).name %>
-  </li>
-<%end%>
+    <li> 
+    <% @user = User.find(neuron.user_mind.user_id) %>
+    <a href="#neuron-<%=index%>"><%= neuron.name %></a> made by <%= @user.name %>
+    </li>
+    <% index += 1 %>
+  <%end%>
 
 
 </ul>
@@ -11,14 +14,13 @@
 
 <table>
   <tr>
-     
-     <%@neurons.each do |neuron|%>
-     <% i = 1 %>
-   <td id = "neuron-<%=i%>" >
+  <% i = 1 %>
+  <%@neurons.each do |neuron|%>
+      <td id = "neuron-<%=i%>" >
       <img src = "data:image/png;base64,<%=neuron.image%>"> <br> <br><br><br><br><br>
-      <% i+= 1 %>
-    </td>
-    <%end%>
+      <% i += 1 %>
+      </td>
+  <%end%>
     
   </tr>
 
