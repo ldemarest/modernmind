@@ -12,22 +12,26 @@ class MindsController < ApplicationController
   end
 
   def create
-    binding.pry
+    user_params
+
 
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
     @mind.save
-    # @user = current_user
-    # @user.update(:mind_maker => true)
-    # @user.save
-    # @first_user = @mind.users.first
-    # @first_user.update(:mind_maker => true)
-    # binding.pry
-    # @first_user.save
 
-    # @mind.update(:creator_id => current_user.id)
-    # neuron = Neuron.create(mind_params[:neuron])
+    user_params.each do |k,v|
+
+     userid = v.split(",") 
+
+     userid.uniq.each {|x| @mind.users << User.find(x) if !@mind.users.include?(User.find(x))}
+
+    end
+
+
     redirect_to user_path(current_user)
+
+
+
   end
 
   def show
@@ -57,6 +61,27 @@ class MindsController < ApplicationController
 
   end
 
+  def update
+
+    @upvote = Upvote.new(upvote_params)
+    @upvote.update(:user_id => current_user.id)
+
+    if !Upvote.users.include?(current_user)
+      @upvote.count += 1
+      @upvote.save
+    end
+
+    if Upvote.users.include?(current_user)
+      @upvote.count -= 1
+      @upvote.save
+    end
+    
+    binding.pry
+
+
+
+
+  end
 
   private
   
@@ -64,6 +89,14 @@ class MindsController < ApplicationController
     params.require(:mind).permit(:name,:public)
   end 
 
+  def user_params
+    params.require(:mind).permit(:user_tokens)
+  end
+
+  def upvote_params
+    params.require(:mind).permit(:mind_id)
+
+  end
 
 
 

@@ -1,22 +1,35 @@
 
- <%=@user.name%>
-
+ <%=@user.name%> 
 
 <%= form_for(@mind) do |f| %>
+
+  <% if @mind.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mind.errors.count, "error") %> prohibited this mind from being saved:</h2>
+      <ul>
+      <% @mind.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <%=f.label :name %>
   <%= f.text_field :name %><br>
   
- <%= f.label :public, "I want my mind to be public"%><br>
-    <%= f.label :public, "Yes" %>
-    <%= f.radio_button :public, true, :checked => true  %>
-    <%= f.label :public, "No" %>
-    <%= f.radio_button :public, false%><br>
-   
-    <%= f.label :user_tokens, "Users" %> <br>
-    <%= f.text_field :user_tokens %>
-
+  <%= f.label :public, "I want my mind to be public"%><br>
+  <%= f.label :public, "Yes" %>
+  <%= f.radio_button :public, true, :checked => true  %>
+  <%= f.label :public, "No" %>
+  <%= f.radio_button :public, false%><br>
+ <div id ="add-users">
+  <%= f.label :user_tokens, "Users" %> 
+  <%= f.text_field :user_tokens %><br>
+</div>
   <%= f.submit %>
+
   <%end%>
+
   <br>
 <ul>
     <strong> incomplete minds </strong>
@@ -35,7 +48,5 @@
   <%=link_to mind.name, mind%>
   </li>
   <%end%>
-
-
 
 </ul>
