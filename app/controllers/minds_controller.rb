@@ -1,5 +1,5 @@
 class MindsController < ApplicationController
-    autocomplete :users, :name
+    # autocomplete :users, :name
   def new
     @mind = Mind.new
 

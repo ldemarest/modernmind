@@ -1,6 +1,6 @@
  function setup() {
      $p.size(900, 400);
-     $p.background(250, 235, 215);
+     $p.background(255, 239, 213);
      $p.smooth();
      $p.frameRate(60);
  }
@@ -10,6 +10,7 @@
 
  function draw() {
      stroke(10);
+     strokeWeight(1);
      if (mousePressed == true) {
          line(mouseX, mouseY, pmouseX, pmouseY);
      }

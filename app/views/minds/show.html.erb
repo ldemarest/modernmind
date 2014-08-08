@@ -6,7 +6,7 @@
   <table>
   </tr>
 <td>
-  <img id = "neurons" src="data:image/png;base64, <% if @neurons.size == 0 %> <%= image_tag "imag1.jpg" %>  <%else%> <%= @lastneuron.image %> <%end%>" style = "position: absolute;
+  <img id = "neurons" src="data:image/png;base64, <% if @neurons.size == 0 %> <%else%> <%= @lastneuron.image %> <%end%>" style = "position: absolute;
 	left: -700px;
 	top: 100px;
 	z-index: 1;
