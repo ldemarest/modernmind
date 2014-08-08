@@ -19,3 +19,5 @@
 //= require bootstrap
 //= require saveimage
 //= require users
+//= require jquery.tokeninput
+//= require tokenfield

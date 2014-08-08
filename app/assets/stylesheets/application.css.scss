@@ -12,6 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require token-input
+ *= require token-input-mac
+ *= require token-input-facebook
+
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"

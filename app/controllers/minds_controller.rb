@@ -1,5 +1,5 @@
 class MindsController < ApplicationController
-
+    autocomplete :users, :name
   def new
     @mind = Mind.new
 
@@ -12,6 +12,7 @@ class MindsController < ApplicationController
   end
 
   def create
+    binding.pry
 
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
@@ -38,16 +39,15 @@ class MindsController < ApplicationController
 
     else
  
-   
-
     @lastneuron = @mind.neurons.last
 
     @neurons = @mind.neurons 
      
-    if @neurons.size >= 4
-      redirect_to completedmind_path
+      if @neurons.size >= 4
+        redirect_to completedmind_path
+      end
+
     end
-end
   end
 
   def completedmind

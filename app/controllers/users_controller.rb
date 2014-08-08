@@ -7,4 +7,10 @@ class UsersController < ApplicationController
     @incomplete = @user.incomplete_minds
   end
 
+  def index
+
+    @users = User.where("name like ?","%#{params[:q]}%")
+
+  end
+
 end
