@@ -39,6 +39,8 @@ canvas#processing-canvas {
   left: 200px;
   top: 100px;
   z: -1;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
 }
 
 .display_mind {
