@@ -16,8 +16,14 @@
 //= require jquery_ujs
 //= require processing
 //= require drawingcanvas
+//= require jquery.tokeninput
 //= require bootstrap
 //= require saveimage
 //= require users
-//= require jquery.tokeninput
+//= require fieldhide
 //= require tokenfield
+
+//= require upvote
+
+//= require smoothscroll
+

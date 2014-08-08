@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807215020) do
+ActiveRecord::Schema.define(version: 20140808202948) do
 
   create_table "minds", force: true do |t|
     t.string   "name"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 20140807215020) do
     t.datetime "updated_at"
     t.text     "image"
     t.integer  "user_mind_id"
+  end
+
+  create_table "upvotes", force: true do |t|
+    t.integer "user_id"
+    t.integer "mind_id"
+    t.integer "count",   default: 0
   end
 
   create_table "user_minds", force: true do |t|

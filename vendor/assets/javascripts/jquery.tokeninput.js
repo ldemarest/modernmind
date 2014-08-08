@@ -12,6 +12,7 @@
 // Default settings
 var DEFAULT_SETTINGS = {
 	// Search settings
+    theme: "facebook",
     method: "GET",
     contentType: "json",
     queryParam: "q",
@@ -43,7 +44,7 @@ var DEFAULT_SETTINGS = {
     idPrefix: "token-input-",
 
 	// Formatters
-    resultsFormatter: function(item){ return "<li>" + item[this.propertyToSearch]+ "</li>" },
+    resultsFormatter: function(item){ return "<li>"+"<img src =" + item.image +">"+ item[this.propertyToSearch] + "</li>" },
     tokenFormatter: function(item) { return "<li><p>" + item[this.propertyToSearch] + "</p></li>" },
 
 	// Callbacks

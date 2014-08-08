@@ -1,8 +1,12 @@
 <ul>
+  <% index = 1 %>
   <%@neurons.each do |neuron|%>
-  <li> 
- <%= neuron.name %> made by SOMEONE <%#= neuron.mind_id %>
-  </li>
+    <li> 
+    <% @user = User.find(neuron.user_mind.user_id) %>
+    <a href="#neuron-<%=index%>" class="smoothScroll"><%= neuron.name %></a> made by <%= @user.name %>
+
+    </li>
+    <% index += 1 %>
   <%end%>
 
 
@@ -11,15 +15,17 @@
 
 <table>
   <tr>
-     
-     <%@neurons.each do |neuron|%>
-     <% i = 1 %>
-   <td id = "neuron-<%=i%>" >
+  <% i = 1 %>
+  <%@neurons.each do |neuron|%>
+      <td id = "neuron-<%=i%>" >
       <img src = "data:image/png;base64,<%=neuron.image%>"> <br> <br><br><br><br><br>
-      <% i+= 1 %>
-    </td>
-    <%end%>
+      <% i += 1 %>
+      </td>
+  <%end%>
     
-  </tr>
+  </tr>..
 
 </table>
+
+
+<button id="upvote-button" style = "margin-top: 2%; margin-left:40%" >upvote dat</button>
