@@ -38,16 +38,15 @@ class MindsController < ApplicationController
 
     else
  
-   
-
     @lastneuron = @mind.neurons.last
 
     @neurons = @mind.neurons 
      
-    if @neurons.size >= 4
-      redirect_to completedmind_path
+      if @neurons.size >= 4
+        redirect_to completedmind_path
+      end
+
     end
-end
   end
 
   def completedmind

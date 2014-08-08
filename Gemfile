@@ -24,6 +24,7 @@ gem 'spring',        group: :development
 gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'rails3-jquery-autocomplete'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

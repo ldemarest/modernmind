@@ -1,4 +1,5 @@
 class UserMind < ActiveRecord::Base
+  
   belongs_to :mind
   belongs_to :user
   has_many :neurons
