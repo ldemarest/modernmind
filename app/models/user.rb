@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   has_many :user_minds
   has_many :minds, :through => :user_minds
   has_many :neurons, :through => :user_minds
-  has_many :upvotes
+  has_many :user_upvotes
+  has_many :upvotes, :through => :user_upvotes
 
   @@complete_minds = []
   @@incomplete_minds = []

@@ -60,23 +60,29 @@ class MindsController < ApplicationController
   end
 
   def update
+    @mind = Mind.find(params[:id])
+  
 
-    @upvote = Upvote.new(upvote_params)
-    @upvote.update(:user_id => current_user.id)
+      if @mind.upvote == nil
+        @upvote = Upvote.create(:mind_id => params[:id])
+         binding.pry
+        @count =  @upvote.count += 1 
+        @upvote.update(:count => @count)
+        @upvote.users << current_user
 
-    if !Upvote.users.include?(current_user)
-      @upvote.count += 1
-      @upvote.save
-    end
+      elsif (@mind.upvote != nil && !@mind.upvote.users.include?(current_user))
+        @count = @mind.upvote.count += 1 
+        @mind.upvote.update(:count => @count)
+        @mind.upvote.users << current_user
 
-    if Upvote.users.include?(current_user)
-      @upvote.count -= 1
-      @upvote.save
-    end
-    
+      elsif @mind.upvote.users.include?(current_user)
+        @count = @mind.upvote.count -= 1 
+        @mind.upvote.update(:count => @count)
+
+
+      end
+
     binding.pry
-
-
 
 
   end
