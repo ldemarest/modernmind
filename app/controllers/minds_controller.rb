@@ -88,18 +88,11 @@ class MindsController < ApplicationController
         @count = @mind.upvote.count -= 1 
         @mind.upvote.update(:count => @count)
 
-<<<<<<< HEAD
+
 
       end
 
-    binding.pry
 
-=======
-    if Upvote.users.include?(current_user)
-      @upvote.count -= 1
-      @upvote.save
-    end
->>>>>>> 8c0ffbf4d5a03d88e3b5e5d8837a10c1110f4144
 
   end
 
