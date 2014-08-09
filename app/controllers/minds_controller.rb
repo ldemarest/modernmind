@@ -13,32 +13,32 @@ class MindsController < ApplicationController
   end
 
   def create
-
+    # binding.pry
     @user = current_user
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
     @mind.save
+
+    user_params.each do |k,v|
+
+      userid = v.split(",")
+
+      userid.uniq.each {|x| @mind.users << User.find(x) if !@mind.users.include?(User.find(x))}
+
+    end
 
     respond_to do |format|
       if @mind.save
         # Tell the UserMailer to send a welcome email after save
         UserMailer.welcome_email(@user).deliver
         format.html { redirect_to(user_path(current_user), notice: 'User was successfully created.') }
-        format.json { render json: @user, status: :created, location: @user }
+        # format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
 
-    user_params.each do |k,v|
-
-     userid = v.split(",") 
-
-     userid.uniq.each {|x| @mind.users << User.find(x) if !@mind.users.include?(User.find(x))}
-
-    end
-    redirect_to user_path(current_user)
   end
 
   def show
@@ -89,7 +89,7 @@ class MindsController < ApplicationController
 
   def mind_params
     params.require(:mind).permit(:name,:public)
-  end 
+  end
 
   def user_params
     params.require(:mind).permit(:user_tokens)
