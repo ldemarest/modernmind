@@ -1,9 +1,10 @@
 class MindsController < ApplicationController
-    # autocomplete :users, :name
+  before_action :show, only: [:show, :update, :destroy, :email]
+  # autocomplete :users, :name
+
   def new
     @mind = Mind.new
 
-  
   end
 
   def index
@@ -13,9 +14,22 @@ class MindsController < ApplicationController
 
   def create
 
+    @user = current_user
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
     @mind.save
+
+    respond_to do |format|
+      if @mind.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.welcome_email(@user).deliver
+        format.html { redirect_to(user_path(current_user), notice: 'User was successfully created.') }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
 
     user_params.each do |k,v|
 
@@ -24,27 +38,22 @@ class MindsController < ApplicationController
      userid.uniq.each {|x| @mind.users << User.find(x) if !@mind.users.include?(User.find(x))}
 
     end
-
-
     redirect_to user_path(current_user)
-
-
-
   end
 
   def show
-     @mind = Mind.find(params[:id])
+    @mind = Mind.find(params[:id])
 
     if (!@mind.users.include?(current_user) && @mind.public == false)
 
       redirect_to error_path
 
     else
- 
-    @lastneuron = @mind.neurons.last
 
-    @neurons = @mind.neurons 
-     
+      @lastneuron = @mind.neurons.last
+
+      @neurons = @mind.neurons
+
       if @neurons.size >= 4
         redirect_to completedmind_path
       end
@@ -53,7 +62,7 @@ class MindsController < ApplicationController
   end
 
   def completedmind
-    
+
     @mind = Mind.find(params[:id])
     @neurons = @mind.neurons
 
@@ -79,16 +88,23 @@ class MindsController < ApplicationController
         @count = @mind.upvote.count -= 1 
         @mind.upvote.update(:count => @count)
 
+<<<<<<< HEAD
 
       end
 
     binding.pry
 
+=======
+    if Upvote.users.include?(current_user)
+      @upvote.count -= 1
+      @upvote.save
+    end
+>>>>>>> 8c0ffbf4d5a03d88e3b5e5d8837a10c1110f4144
 
   end
 
   private
-  
+
   def mind_params
     params.require(:mind).permit(:name,:public)
   end 
@@ -101,7 +117,5 @@ class MindsController < ApplicationController
     params.require(:mind).permit(:mind_id)
 
   end
-
-
 
 end
