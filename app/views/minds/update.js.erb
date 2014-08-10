@@ -1,0 +1,43 @@
+
+i = 0;
+
+$('#upvote-button').click(function(){
+
+
+
+if (i == 0) {
+
+
+
+$('#upvote-button').css("background-color","yellow").val("upvote has "+"<%= escape_javascript @upvotes.count.to_s%>")
+
+i += 1;
+
+}
+  
+else if (i == 1) {
+$('#upvote-button').css("background-color","pink")
+
+  i -= 1;
+
+}
+
+ var pathname = window.location.pathname;
+    var id = pathname.replace ( /[^\d.]/g, '' );
+    var mind_json = JSON.stringify({"mind" : {"mind_id": id}});
+
+    // Sending the image data to Server
+    $.ajax({
+      type: 'PATCH',
+      url: '/minds/' + id,
+      data: mind_json,
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      success: function (msg) {
+        alert("Done, Picture Uploaded.");
+      }
+
+      });
+
+});
+
