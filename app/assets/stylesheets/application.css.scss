@@ -209,7 +209,7 @@ canvas#processing-canvas {
   margin-right: 5px;
 }
 #stroke-small{
-  display: block;
+/*  display: block;
   float: left;
 
   border-radius: 50%;
@@ -219,11 +219,13 @@ canvas#processing-canvas {
   border-style: solid;
   border-color: white;
   border-width: 7px;
-
+*/
   margin-right: 5px;
+  width: 30px;
+  height: 30px;
 }
 #stroke-medium{
-  display: block;
+/*  display: block;
   float: left;
 
   border-radius: 50%;
@@ -232,20 +234,24 @@ canvas#processing-canvas {
   background: black;
   border-style: solid;
   border-color: white;
-  border-width: 4px;
+  border-width: 4px;*/
 
   margin-right: 5px;
+  width: 30px;
+  height: 30px;
 }
 #stroke-large{
-  display: block;
+/*  display: block;
   float: left;
 
   border-radius: 50%;
   width: 25px;
   height: 25px;
   background: black;
-
+*/
   margin-right: 5px;
+  width: 30px;
+  height: 30px;
 }
 #eraser{
     width: 30px;

@@ -5,18 +5,18 @@ class MindsController < ApplicationController
 
   end
 
+
   def index
     @minds = Mind.all
 
   end
 
+
   def create
-    # binding.pry
-    @user = current_user
+    @user = initial_emails
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
     @mind.save
-
     user_params.each do |k,v|
 
       userid = v.split(",")
@@ -28,16 +28,16 @@ class MindsController < ApplicationController
     respond_to do |format|
       if @mind.save
         # Tell the UserMailer to send a welcome email after save
-        UserMailer.welcome_email(@user).deliver
+        UserMailer.new_mind(@user).deliver
         format.html { redirect_to(user_path(current_user), notice: 'User was successfully created.') }
-        # format.json { render json: @user, status: :created, location: @user }
+        format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-
   end
+
 
   def show
 
@@ -45,13 +45,9 @@ class MindsController < ApplicationController
 
 
     if (!@mind.users.include?(current_user) && @mind.public == false)
-
       redirect_to error_path
-
     else
-
       @lastneuron = @mind.neurons.last
-
       @neurons = @mind.neurons
 
       if @neurons.size >= 4
@@ -61,45 +57,70 @@ class MindsController < ApplicationController
     end
   end
 
+
   def completedmind
-
+    @user = neuron_emails
     @mind = Mind.find(params[:id])
-
     @neurons = @mind.neurons
     @upvote = @mind.upvote
-
-    
-
+    if @mind = @mind
+      UserMailer.mind_completed(@user).deliver
+    end
   end
 
+
   def update
-    
+
     @mind = Mind.find(params[:id])
     @upvotes = @mind.upvote
 
-      if @mind.upvote == nil
-        @upvote = Upvote.create(:mind_id => params[:id])
-        @count =  @upvote.count += 1 
-        @upvote.update(:count => @count)
-        @upvote.users << current_user
+    if @mind.upvote == nil
+      @upvote = Upvote.create(:mind_id => params[:id])
+      @count =  @upvote.count += 1
+      @upvote.update(:count => @count)
+      @upvote.users << current_user
 
-      elsif (@mind.upvote != nil && !@mind.upvote.users.include?(current_user))
-        @count = @mind.upvote.count += 1 
-        @mind.upvote.update(:count => @count)
-        @mind.upvote.users << current_user
+    elsif (@mind.upvote != nil && !@mind.upvote.users.include?(current_user))
+      @count = @mind.upvote.count += 1
+      @mind.upvote.update(:count => @count)
+      @mind.upvote.users << current_user
+
+    elsif @mind.upvote.users.include?(current_user)
+      @count = @mind.upvote.count -= 1
+      @mind.upvote.update(:count => @count)
+      @mind.upvote.users.delete(current_user)
+    end
+
+    respond_to do |format|
+      format.html {render text: "working"}
+      format.js
+    end
+
+  end
 
 
-      elsif @mind.upvote.users.include?(current_user)
-        @count = @mind.upvote.count -= 1 
-        @mind.upvote.update(:count => @count)
-        @mind.upvote.users.delete(current_user)
-      end
 
-      respond_to do |format|
-        format.html {render text: "working"}
-        format.js
-      end
-  
+  def initial_emails
+    @emails = []
+    Mind.all.last.users.each do |user|
+      @emails << user.email
+    end
+    @emails
+    # binding.pry
+  end
+
+  def neuron_emails
+    @emails = []
+    @user_ids = []
+    @mind = Mind.find(params[:id])
+    @neurons = @mind.neurons
+    @neurons.each do |user|
+      @user_ids << UserMind.find(user.user_mind_id).user_id
+    end
+    @user_ids.each do |id|
+      @emails << User.find(id).email
+    end
+    @emails
   end
 
   private
@@ -114,7 +135,6 @@ class MindsController < ApplicationController
 
   def upvote_params
     params.require(:mind).permit(:mind_id)
-
   end
 
 end
