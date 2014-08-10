@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/publicminds' => 'static_pages#publicminds', :as => :publicminds
   get '/error' => 'static_pages#error', :as => :error
 
+
 end

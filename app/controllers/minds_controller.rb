@@ -1,6 +1,4 @@
 class MindsController < ApplicationController
-  before_action :show, only: [:show, :update, :destroy, :email]
-  # autocomplete :users, :name
 
   def new
     @mind = Mind.new
@@ -42,7 +40,9 @@ class MindsController < ApplicationController
   end
 
   def show
+
     @mind = Mind.find(params[:id])
+
 
     if (!@mind.users.include?(current_user) && @mind.public == false)
 
@@ -64,17 +64,21 @@ class MindsController < ApplicationController
   def completedmind
 
     @mind = Mind.find(params[:id])
+
     @neurons = @mind.neurons
+    @upvote = @mind.upvote
+
+    
 
   end
 
   def update
+    
     @mind = Mind.find(params[:id])
-  
+    @upvotes = @mind.upvote
 
       if @mind.upvote == nil
         @upvote = Upvote.create(:mind_id => params[:id])
-         binding.pry
         @count =  @upvote.count += 1 
         @upvote.update(:count => @count)
         @upvote.users << current_user
@@ -84,16 +88,18 @@ class MindsController < ApplicationController
         @mind.upvote.update(:count => @count)
         @mind.upvote.users << current_user
 
+
       elsif @mind.upvote.users.include?(current_user)
         @count = @mind.upvote.count -= 1 
         @mind.upvote.update(:count => @count)
-
-
-
+        @mind.upvote.users.delete(current_user)
       end
 
-
-
+      respond_to do |format|
+        format.html {render text: "working"}
+        format.js
+      end
+  
   end
 
   private

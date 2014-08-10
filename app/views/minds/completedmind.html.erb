@@ -28,4 +28,9 @@
 </table>
 
 
-<button id="upvote-button" style = "margin-top: 2%; margin-left:40%" >upvote dat</button>
+
+
+<%= button_to "Upvote dat", mind_path,id: "upvote-button", :method => :patch, :remote => true %>
+
+
+
