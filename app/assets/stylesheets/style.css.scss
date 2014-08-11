@@ -22,6 +22,7 @@ canvas#processing-canvas {
   z: -1;
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  cursor: image-url('/assets/pencil.png'), auto;
 }
 
 .display_mind {
@@ -239,9 +240,6 @@ canvas#processing-canvas {
    width: 30px;
    height: 30px;
   }
-.cursor{
-  cursor: image-url('/assets/pencil.png'), auto;
-}
 /*.cursor1{
   cursor: image-url('/assets/eraser.png'), auto;
 }*/
