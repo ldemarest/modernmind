@@ -31,7 +31,7 @@
 
 
 
-<span id = "upvote-count"> </span>
+<span id = "upvote-count">Upvotes: <%=@upvote.count%> </span>
 
 
 <% if @mind.upvote == nil || !@mind.upvote.users.include?(current_user) %>

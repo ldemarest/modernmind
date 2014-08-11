@@ -15,7 +15,9 @@
  *= require token-input
  *= require token-input-mac
  *= require token-input-facebook
- *= require style.css.scss
+ *= require style
+ *= require scaffolds
+
 
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
