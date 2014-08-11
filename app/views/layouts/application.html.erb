@@ -1,50 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Modernmind</title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'drawingcanvas', {type:"text/processing", :"data-processing-target" =>"processing-canvas"} %>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <title>ModernMind</title>
+          <%= csrf_meta_tags %>
+          <%= stylesheet_link_tag    'application', media: 'all' %>
+          <%= javascript_include_tag 'application' %>
+          <%= javascript_include_tag 'drawingcanvas', {type:"text/processing", :"data-processing-target" =>"processing-canvas"} %>
 
-  <%= analytics_init if Rails.env.production? %>
-</head>
-<body>
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>  
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to 'ModernMind', root_path, :class => "navbar-brand" %>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a href="/about">About</a></li>
-            <li><a href="/greatminds">Great Minds</a></li>
-            <li><a href="/publicminds">Public Minds</a></li>
-            <% if logged_in? %>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to current_user.name, user_path(current_user) %></li>
-                <li><img src = <%= current_user.image%>></li>
+          <%= analytics_init if Rails.env.production? %>
 
-                <li><%= link_to "Log Out", signout_path %></li>
-            <% else %>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Log in with Facebook", "auth/facebook" %></li>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    <div class="clr"></div>
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= yield %>
-  <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?libraries=places" %>
+        <!-- Favicon-->
+        <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+
+        <!-- Css Global Compulsory -->
+        <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css"> 
+        <!-- Css Implementing Plugins -->
+        <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">   
+        <!-- Css Theme -->           
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Web Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600&subset;=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/fonts/montserrat/style.css">
+    </head>
+    <body>
+
+    <%= yield %>
+
 </body>
 </html>
+
+

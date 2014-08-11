@@ -308,6 +308,7 @@ a:focus {
 	border-radius: 0;
 	min-height: 100px;
 	margin-bottom: 0;
+
 	border: none;
 }
 	
@@ -322,7 +323,7 @@ a:focus {
   z-index: 1;
 }
 .header-carousel .item{
-  height: 600px;
+  height: 400px;
 }
 .header-carousel img{
   position: absolute;

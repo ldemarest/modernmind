@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => 'layouts/navbar' %>
+<%= render :partial => 'layouts/slider' %>
+<br>
+
+<!-- <p id="notice"><%= notice %></p> -->
 
   <strong><%= @mind.name%> you have <%= 4 - @neurons.size %> left </strong> <br>
 
@@ -8,14 +12,14 @@
 <td>
   <img id = "neurons" src="data:image/png;base64, <% if @neurons.size == 0 %> <%else%> <%= @lastneuron.image %> <%end%>" style = "position: absolute;
 	left: -700px;
-	top: 100px;
-	z-index: 1;
+	top: 500px;
+	z-index: 2;
 	height: 400px;
 	width: 900px;
 	outline: none;">
  </td>
  <td>
- <canvas id ="processing-canvas" > </canvas>
+ <canvas id ="processing-canvas"> </canvas>
  </td>
  <td>
   <div id="red"></div>

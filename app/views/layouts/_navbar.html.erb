@@ -1,0 +1,66 @@
+
+
+        <!-- Header (navigation menu, and logo) -->
+        <nav class="navbar navbar-default header-navbar" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html">
+                                <!-- Logo Image -->
+                                <%= image_tag "png.png", id:"navbar-logo"%> 
+                                
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">                        
+                                <!-- <li class="active"><a href="index.html">ModernMind</a></li> -->
+                                <!-- <li><a href="about.html">About</a></li> -->
+                                <!-- <li><a href="services.html">Great Minds</a></li> -->
+
+                                <!-- Dropdown -->
+                                <li class="dropdown">
+                                    <a href="projects.html" class="dropdown-toggle" data-toggle="dropdown">Great Minds</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="project-inner.html">Single Project</a></li>
+                                        <li><a href="projects.html">Gallery Style</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Dropdown -->
+                                <li class="dropdown">
+                                    <a href="blog.html" class="dropdown-toggle" data-toggle="dropdown">Public Minds</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="blog-inner.html">Single Blog</a></li>
+                                        <li><a href="blog.html">Gallery Blog</a></li>
+                                    </ul>
+                                <!-- login info -->     
+                                <% if logged_in? %>
+                                  <li><%= link_to current_user.name, user_path(current_user) %></li>
+                                  <!-- <li><img src = <%= current_user.image%>></li> -->
+                                  <li><%= link_to "Log Out", signout_path %></li>
+                                <% else %>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><%= link_to "Log in with Facebook", "auth/facebook" %></li>
+                                <% end %>
+                                <!-- <li><a href="contact.html">Luke Demarest</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- /row -->
+            </div><!-- /container -->
+        </nav>
+        <!-- End Header -->
+
+       
