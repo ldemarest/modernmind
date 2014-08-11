@@ -24,6 +24,5 @@
 //= require fieldhide
 //= require tokenfield
 //= require smoothscroll
-//= require upvote
 
 

@@ -16,10 +16,9 @@ class MindsController < ApplicationController
     @user = initial_emails
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
-
     @mind.save
-     a = Upvote.create(:mind_id => @mind.id)
-     a.save
+    upvote = Upvote.create(:mind_id => @mind.id)
+    upvote.save
 
 
 
@@ -69,9 +68,9 @@ class MindsController < ApplicationController
     @mind = Mind.find(params[:id])
     @neurons = @mind.neurons
     @upvote = @mind.upvote
-    if @mind = @mind
-      UserMailer.mind_completed(@user).deliver
-    end
+    # if @mind = @mind
+    #   UserMailer.mind_completed(@user).deliver
+    # end
   end
 
 

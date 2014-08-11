@@ -21,9 +21,17 @@ class StaticPagesController < ApplicationController
   end
 
   def greatminds
-
-    @great_minds = Mind.all.joins(:upvote).order('count desc').limit(10)
-
+    # all minds that
+    @great_minds = Mind.
+      joins(:neurons, :upvote).
+      # are public
+      where(:public => true).
+      # have >= 5 neurons
+      group('user_minds.mind_id').
+        having('COUNT(neurons.id) >= 4').
+      # are in the top 10 by number of upvotes
+      order('upvotes.count DESC').
+        limit(10)
   end
 
 
