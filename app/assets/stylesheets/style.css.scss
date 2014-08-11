@@ -1,0 +1,246 @@
+@import "bootstrap";
+/* Some Style from the Bootstrap Default Theme */
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+canvas#processing-canvas {
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  z: -1;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  cursor: image-url('/assets/pencil.png'), auto;
+}
+
+.display_mind {
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  z-index: 2;
+  height: 401px;
+  width: 150px;
+  pointer-events: none;
+  background: white;
+}
+
+#neurons {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-drag: none;
+  -khtml-user-drag: none;
+  -webkit-user-drag: none;
+  user-drag: none;  
+  }
+
+#red{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: red;
+
+    margin-right: 5px;
+}
+#orange{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: orange;
+
+    margin-right: 5px;
+}
+#yellow{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: yellow;
+
+    margin-right: 5px;
+}
+#yellow{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background:yellow;
+
+    margin-right: 5px;
+}
+#green{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: green;
+
+    margin-right: 5px;
+}
+#blue{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: blue;
+
+    margin-right: 5px;
+}
+#purple{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: purple;
+
+    margin-right: 5px;
+}
+#black{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: black;
+
+    margin-right: 5px;
+}
+#white{
+    display: block;
+    float: left;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+
+    margin-right: 5px;
+}
+
+#opacity-small{
+  display: block;
+  float: left;
+
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: black;
+  opacity:0.1;
+
+  margin-right: 5px;
+}
+#opacity-medium{
+  display: block;
+  float: left;
+
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: black;
+  opacity:0.3;
+
+  margin-right: 5px;
+}
+#opacity-large{
+  display: block;
+  float: left;
+
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: black;
+  opacity:1.0;
+
+  margin-right: 5px;
+}
+#stroke-small{
+/*  display: block;
+  float: left;
+
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: black;
+  border-style: solid;
+  border-color: white;
+  border-width: 7px;
+*/
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+}
+#stroke-medium{
+/*  display: block;
+  float: left;
+
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: black;
+  border-style: solid;
+  border-color: white;
+  border-width: 4px;*/
+
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+}
+#stroke-large{
+/*  display: block;
+  float: left;
+
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: black;
+*/
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+}
+#eraser{
+    width: 30px;
+    height: 30px;
+    cursor: image-url('/assets/eraser.png'), auto;
+  }
+#upvote-icon{
+   width: 30px;
+   height: 30px;
+  }
+/*.cursor1{
+  cursor: image-url('/assets/eraser.png'), auto;
+}*/
+

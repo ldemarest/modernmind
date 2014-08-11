@@ -29,13 +29,19 @@
 
 <%= image_tag "icon_2751.png", id: "upvote-icon" %>
 
-<span id = "upvote-count">Upvotes: <%=@mind.upvote.count %></span>
 
 
-<% if @mind.upvote.users.include?(current_user) %>
+<span id = "upvote-count"> </span>
+
+
+<% if @mind.upvote == nil || !@mind.upvote.users.include?(current_user) %>
+
+<% upvote = "Upvote" %>
+
+<% elsif @mind.upvote.users.include?(current_user) %>
+
   <% upvote = "Upvoted"%>
-<% else %>
-  <% upvote = "Upvote" %>
+
 <% end %>
 
 <br>

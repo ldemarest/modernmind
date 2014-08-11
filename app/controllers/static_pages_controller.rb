@@ -22,13 +22,7 @@ class StaticPagesController < ApplicationController
 
   def greatminds
 
-    great_minds = []
-
-    minds = Upvote.all.order('count desc').limit(10).collect {|x| x.mind_id }
-
-    minds.each {|x| great_minds << Mind.find(x)}
-
-    @great_minds = great_minds
+    @great_minds = Mind.all.joins(:upvote).order('count desc').limit(10)
 
   end
 
