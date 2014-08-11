@@ -16,7 +16,13 @@ class MindsController < ApplicationController
     @user = initial_emails
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
+
     @mind.save
+     a = Upvote.create(:mind_id => @mind.id)
+     a.save
+
+
+
     user_params.each do |k,v|
 
       userid = v.split(",")
@@ -63,9 +69,9 @@ class MindsController < ApplicationController
     @mind = Mind.find(params[:id])
     @neurons = @mind.neurons
     @upvote = @mind.upvote
-    # if @mind = @mind
-    #   UserMailer.mind_completed(@user).deliver
-    # end
+    if @mind = @mind
+      UserMailer.mind_completed(@user).deliver
+    end
   end
 
 
@@ -76,18 +82,18 @@ class MindsController < ApplicationController
 
     if @mind.upvote == nil
       @upvote = Upvote.create(:mind_id => params[:id])
-      @count =  @upvote.count += 1
-      @upvote.update(:count => @count)
+      count =  @upvote.count += 1
+      @upvote.update(:count => count)
       @upvote.users << current_user
 
     elsif (@mind.upvote != nil && !@mind.upvote.users.include?(current_user))
-      @count = @mind.upvote.count += 1
-      @mind.upvote.update(:count => @count)
+      count = @mind.upvote.count += 1
+      @mind.upvote.update(:count => count)
       @mind.upvote.users << current_user
 
     elsif @mind.upvote.users.include?(current_user)
-      @count = @mind.upvote.count -= 1
-      @mind.upvote.update(:count => @count)
+      count = @mind.upvote.count -= 1
+      @mind.upvote.update(:count => count)
       @mind.upvote.users.delete(current_user)
     end
 
