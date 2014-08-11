@@ -18,19 +18,30 @@
   <% i = 1 %>
   <%@neurons.each do |neuron|%>
       <td id = "neuron-<%=i%>" >
-      <img src = "data:image/png;base64,<%=neuron.image%>"> <br><br><br><br><br><br>
+      <img src = "data:image/png;base64,<%=neuron.image%>"> <br> <br><br><br><br><br>
       <% i += 1 %>
       </td>
   <%end%>
     
-  </tr>
+  </tr>..
 
-</table>
+</table>  
+
+<%= image_tag "icon_2751.png", id: "upvote-icon" %>
+
+<span id = "upvote-count">Upvotes: <%=@mind.upvote.count %></span>
 
 
+<% if @mind.upvote.users.include?(current_user) %>
+  <% upvote = "Upvoted"%>
+<% else %>
+  <% upvote = "Upvote" %>
+<% end %>
 
+<br>
 
-<%= button_to "Upvote dat", mind_path,id: "upvote-button", :method => :patch, :remote => true %>
+<br>
+<%= button_to upvote, mind_path,id: "upvote-button", :method => :patch, :remote => true %>
 
 
 

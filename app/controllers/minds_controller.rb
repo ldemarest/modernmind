@@ -63,9 +63,9 @@ class MindsController < ApplicationController
     @mind = Mind.find(params[:id])
     @neurons = @mind.neurons
     @upvote = @mind.upvote
-    if @mind = @mind
-      UserMailer.mind_completed(@user).deliver
-    end
+    # if @mind = @mind
+    #   UserMailer.mind_completed(@user).deliver
+    # end
   end
 
 
@@ -92,7 +92,7 @@ class MindsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html {render text: "working"}
+      format.html 
       format.js
     end
 
