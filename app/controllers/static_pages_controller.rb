@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
     
   end
 
-  def publicminds
+  def openminds
 
     @completed_minds = Mind.completed_minds
 

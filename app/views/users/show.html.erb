@@ -28,7 +28,7 @@
     <%= f.label :public, "No" %>
     <%= f.radio_button :public, false%><br>
    <div id ="add-users">
-    <%= f.label :user_tokens, "Users" %> 
+    <%= f.label :user_tokens, "Please type in the members you want to add." %> 
     <%= f.text_field :user_tokens %><br>
   </div>
     <%= f.submit %>
@@ -47,7 +47,7 @@
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
   <% @incomplete.each  do |mind| %>
   <li>
-    <%=link_to mind.name, mind%>
+    <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %>
   </li>
   <%end%>
 
@@ -64,8 +64,11 @@
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
  <% @complete.each  do |mind| %>
   <li>
-  <%=link_to mind.name, mind%>
+  <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %> 
+<%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>  
   </li>
   <%end%>
 </ul>
 </div>
+
+
