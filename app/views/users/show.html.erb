@@ -1,6 +1,45 @@
 <%= render :partial => 'layouts/navbar' %>
-<%= render :partial => 'layouts/slider' %>
-  
+<%#= render :partial => 'layouts/slider' %>
+
+<div id="header-carousel" data-pause="false" class="carousel slide carousel-scroll header-carousel" data-ride="carousel"> 
+    <!-- Slider Indicators -->
+
+    <script type="text/javascript">
+    $('.header-carousel').carousel({
+    interval: 1,
+    pause: 'none'
+})
+
+    </script>
+    <ol class="carousel-indicators">
+        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#header-carousel" data-slide-to="1"></li> 
+        <li data-target="#header-carousel" data-slide-to="2"></li>  
+        <li data-target="#header-carousel" data-slide-to="3"></li>
+    </ol>   
+    <div class="carousel-inner"> 
+        <div class="carousel-caption header-carousel-caption">
+        </div>   
+        <div class="item active"> 
+          <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.first.image%>" > 
+        </div>
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+          <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.second.image%>" >       
+        </div>   
+
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+            <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.third.image%>" > 
+        </div> 
+
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+            <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.fourth.image%>" >  
+        </div> 
+
+    </div>   
+</div>
 <div class="col-sm-2 col-md-4">
   <div class="service-title"> 
     <h3><strong> Create a Mind </strong></h3>
