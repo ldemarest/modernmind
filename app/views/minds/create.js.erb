@@ -7,12 +7,13 @@ function addMind() {
   var publicmind = "<%= j @mind.public.to_s %>"
   var mindstatus
 
+
+
   if (publicmind === "true"){
     mindstatus = "Open Mind";
   }
   else{
     mindstatus = "Closed Mind"
-
   }
 
 
@@ -22,7 +23,8 @@ function addMind() {
   $('#open-mind-list').append(appendItem);
 
   $('#mind_name').val('');
-  
+ $("li.token-input-token-facebook").remove();
+
   }
 
 

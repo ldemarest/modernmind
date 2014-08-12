@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    # binding.pry
+ 
     @user = current_user
     @mind = Mind.new
     @complete = @user.complete_minds
