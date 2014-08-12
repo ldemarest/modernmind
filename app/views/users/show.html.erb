@@ -1,6 +1,48 @@
 <%= render :partial => 'layouts/navbar' %>
-<%= render :partial => 'layouts/slider' %>
-  
+
+<div id="header-carousel" data-pause="false" class="carousel slide carousel-scroll header-carousel" data-ride="carousel"> 
+    <!-- Slider Indicators -->
+
+    <script type="text/javascript">
+    $('.header-carousel').carousel({
+    interval: 1,
+    pause: 'none'
+})
+
+    </script>
+    <ol class="carousel-indicators">
+        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#header-carousel" data-slide-to="1"></li> 
+        <li data-target="#header-carousel" data-slide-to="2"></li>  
+        <li data-target="#header-carousel" data-slide-to="3"></li>
+    </ol>   
+    <div class="carousel-inner"> 
+        <div class="carousel-caption header-carousel-caption">
+        </div>
+      <% if @complete.length > 0 %>  
+        <div class="item active"> 
+          <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.first.image%>" > 
+        </div>
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+          <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.second.image%>" >       
+        </div>   
+
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+            <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.third.image%>" > 
+        </div> 
+
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+            <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.fourth.image%>" >  
+        </div> 
+      <% else%>
+        <%= render :partial => 'layouts/slider' %>
+      <% end %>
+
+    </div>   
+</div>
 <div class="col-sm-2 col-md-4">
   <div class="service-title"> 
     <h3><strong> Create a Mind </strong></h3>
@@ -62,12 +104,14 @@
   <h3><strong> Complete Minds </strong></h3>
   </div>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+<% if @complete != nil %>
  <% @complete.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %> 
 <%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>  
   </li>
   <%end%>
+<% end %>
 </ul>
 </div>
 

@@ -110,12 +110,16 @@ class MindsController < ApplicationController
 
 
   def initial_emails
+    binding.pry
     @emails = []
-    Mind.all.last.users.each do |user|
-      @emails << user.email
+    if Mind.all.last.users.exists?
+      Mind.all.last.users.each do |user|
+        @emails << user.email
+      end
+    else
+      @email << current_user.email
     end
     @emails
-    # binding.pry
   end
 
   def neuron_emails
