@@ -14,21 +14,26 @@
     Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "");
     var neuron_json = JSON.stringify({"neuron" : {"image": Pic, "name": name }, "user_mind" : {"mind_id": id}});
 
-
-    // Sending the image data to Server
-    $.ajax({
-      type: 'POST',
-      url: '/minds/'+id+'/neurons',
-      // data: '{neuron :{ "image" : "' + Pic + '" ,"mind_id" : "' + id + '","name":"' + name + '", "crazy_eyes" : "MWAHAHAHAHAAH"}',
-      data: neuron_json,
-      contentType: 'application/json; charset=utf-8',
-      dataType: 'json',
-      success: function (msg) {
-        alert("Done, Picture Uploaded.");
-        window.location.reload();
-     
-      }
+    if(name !== ""){
+      // Sending the image data to Server
+      $.ajax({
+        type: 'POST',
+        url: '/minds/'+id+'/neurons',
+        // data: '{neuron :{ "image" : "' + Pic + '" ,"mind_id" : "' + id + '","name":"' + name + '", "crazy_eyes" : "MWAHAHAHAHAAH"}',
+        data: neuron_json,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+          alert("Done, Picture Uploaded.");
+          window.location.reload();
+       
+        }
 
       });
-
+    } else {
+      $('#neuron-name').css({"border-color": "#FF0000", 
+             "border-width":"2px", 
+             "border-style":"solid"});
+    }
   }
+
