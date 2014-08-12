@@ -26,17 +26,10 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">                        
                                 <!-- <li class="active"><a href="index.html">ModernMind</a></li> -->
-                                <!-- <li><a href="about.html">About</a></li> -->
-                                <!-- <li><a href="services.html">Great Minds</a></li> -->
+                                 <li><a href="about.html">Great Minds</a></li>
+                                <li><a href="services.html">Open Minds</a></li>
 
-                                <!-- Dropdown -->
-                                <li class="dropdown">
-                                    <a href="projects.html" class="dropdown-toggle" data-toggle="dropdown">Great Minds</a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="project-inner.html">Single Project</a></li>
-                                        <li><a href="projects.html">Gallery Style</a></li>
-                                    </ul>
-                                </li>
+
 
                                 <!-- Dropdown -->
                                 <li class="dropdown">
@@ -45,6 +38,7 @@
                                         <li><a href="/greatminds">Great Minds</a></li>
                                         <li><a href="/openminds">Open Minds</a></li>
                                     </ul>
+
                                 <!-- login info -->     
                                 <% if logged_in? %>
                                   <li><%= link_to current_user.name, user_path(current_user) %></li>

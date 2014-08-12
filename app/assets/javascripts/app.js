@@ -44,8 +44,12 @@ jQuery(document).ready(function(){
 				$('#contactform img.loader').fadeOut('slow',function(){$(this).remove()});
 				$('#submit').removeAttr('disabled');
 				if(data.match('success') != null) $('#contactform').slideUp('slow');
+			},
 
-			}
+		$('#caro').carousel({
+    	// pause: "false"
+    	interval: 200
+
 		);
 
 		});
@@ -99,4 +103,7 @@ Google Maps
 	}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
 

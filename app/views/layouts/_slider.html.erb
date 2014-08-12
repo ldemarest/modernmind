@@ -1,6 +1,15 @@
 
-        <div id="header-carousel" class="carousel slide carousel-scroll header-carousel" data-ride="carousel"> 
+        <div id="header-carousel" data-pause="false" class="carousel slide carousel-scroll header-carousel" data-ride="carousel"> 
             <!-- Slider Indicators -->
+
+            <script type="text/javascript">
+            $('.header-carousel').carousel({
+            interval: 1,
+            pause: 'none'
+        })
+
+            </script>
+
             <ol class="carousel-indicators">
                 <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#header-carousel" data-slide-to="1"></li> 
@@ -11,12 +20,13 @@
 
                 <!-- slider text -->
                 <div class="carousel-caption header-carousel-caption">
-                    <h1>Modern Mind</h1>
+                    <!-- <h1>Modern Mind</h1> -->
                     <!-- <img src="assets/img/icon_11105.png" height="100"><br> -->
-                    <!-- <canvas height="300" width="600" style="border:1px solid #000000; top: 10%;"> </canvas><br> -->
+                     
                     <!-- Project Link -->
                     <!-- <a href="project-inner.html" class="btn white-btn">Sign In</a> -->
-                    <%= link_to "Sign In", "auth/facebook", class:"btn white-btn" %>`
+                <canvas id="mind-logo" > </canvas>
+                    <!-- <%= link_to "Sign In", "auth/facebook", class:"btn white-btn" %> -->
                 </div>   
 
                 <!-- Slider Item (image, link and description for your project in slider) -->        
