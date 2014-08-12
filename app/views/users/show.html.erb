@@ -22,10 +22,10 @@
     <%=f.label :name %>
     <%= f.text_field :name %><br>
     
-    <%= f.label :public, "I want my mind to be public"%><br>
-    <%= f.label :public, "Yes" %>
+    <!-- <%= f.label :public, "I want my mind to be public"%><br> -->
+    <%= f.label :public, "Open" %>
     <%= f.radio_button :public, true, :checked => true  %>
-    <%= f.label :public, "No" %>
+    <%= f.label :public, "Closed" %>
     <%= f.radio_button :public, false%><br>
    <div id ="add-users">
     <%= f.label :user_tokens, "Users" %> 

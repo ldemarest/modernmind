@@ -5411,6 +5411,7 @@ button.close {
   border-right-width: 0;
   border-left-color: #fff;
 }
+
 .carousel {
   position: relative;
 }
@@ -5422,8 +5423,8 @@ button.close {
 .carousel-inner > .item {
   position: relative;
   display: none;
-  -webkit-transition: .6s ease-in-out left;
-          transition: .6s ease-in-out left;
+  -webkit-transition: 6s ease-in-out left;
+          transition: 6s ease-in-out left;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
