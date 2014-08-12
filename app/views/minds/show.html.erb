@@ -1,61 +1,64 @@
 <%= render :partial => 'layouts/navbar' %>
-<%= render :partial => 'layouts/slider' %>
+
+  <h1 style = "text-align:center;"> <strong><%= @mind.name%></strong> <br> has
+    <strong><%= 4 - @neurons.size %></strong> neurons left </h1> <br>
+
+  <table align = "center" >
+    <tr>
+      <td id = "td-partial-neuron">
+        <div id = "partial-neuron" >
+        <img id = "neurons" src="data:image/png;base64, <% if @neurons.size == 0 %> <%else%> <%= @lastneuron.image %> <% end %>" >
+        </div>
+      </td>
+      <td>
+        <canvas id ="processing-canvas"> </canvas>
+      </td>
+    </tr>
+
+</table>
 <br>
 
-<!-- <p id="notice"><%= notice %></p> -->
 
-  <strong><%= @mind.name%> you have <%= 4 - @neurons.size %> left </strong> <br>
+<div  style= "width:80%; margin:auto; ">
+    <div id = "color-options">
+   <strong>Colors:</strong>
+    <div id="red"></div>
+    <div id="orange"></div>
+    <div id="yellow"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+    <div id="purple"></div>
+    <div id="black"></div>
+    <div id="white"></div>
+</div>
+<div id = "eraser-options" >
+    <strong>Eraser:</strong>
+    <img id="eraser" src="/assets/icon_3715.png">
+</div>
 
-
-  <table>
-  </tr>
-<td>
-  <img id = "neurons" src="data:image/png;base64, <% if @neurons.size == 0 %> <%else%> <%= @lastneuron.image %> <%end%>" style = "position: absolute;
-	left: -700px;
-	top: 500px;
-	z-index: 2;
-	height: 400px;
-	width: 900px;
-	outline: none;">
- </td>
- <td>
- <canvas id ="processing-canvas"> </canvas>
- </td>
- <td>
-  <div id="red"></div>
-  <div id="orange"></div>
-  <div id="yellow"></div>
-  <div id="green"></div>
-  <div id="blue"></div>
-  <div id="purple"></div>
-  <div id="black"></div>
-  <div id="white"></div>
-  <img id="eraser" src="/assets/icon_3715.png"><br>
-  <!-- <script>
-  //   document.getElementById("processing-canvas").style.cursor = "image-url('/assets/pencil.png'), auto;";
-  </script> -->
-
-  <div id="opacity-small" title='Light Opacity'></div>
-  <div id="opacity-medium" title='Medium Opacity'></div>
-  <div id="opacity-large" title='Dark Opacity'></div><br><br>
-
-  <img id="stroke-small" title='Small Stroke' src="/assets/icon_7675.png">
-  <img id="stroke-medium" title='Medium Stroke' src="/assets/icon_1170.png">
-  <img id="stroke-large" title='Large Stroke' src="/assets/icon_12936.png">
-
- </td>
-</tr>
-<tr>
-
-<input id = "neuron-name" style = "margin-top: 35%; margin-left:40%" text>
-
-<button id="save_button" style = "margin-top: 2%; margin-left:40%" onclick="saveDrawing()">Submit My Neuron</button>
-
-</tr>
-</table>
+<div id = "draw-opacity" >   
+ <strong>Opacity:</strong>
+    <div id="opacity-small" title='Light Opacity'></div>
+    <div id="opacity-medium" title='Medium Opacity'></div>
+    <div id="opacity-large" title='Dark Opacity'></div>
+  </div>
 
 
-<div class="display_mind"></div>
+  <div id = "draw-options" > 
+   <strong>Width:</strong>
+    <img id="stroke-small" title='Small Stroke' src="/assets/icon_7675.png">
+    <img id="stroke-medium" title='Medium Stroke' src="/assets/icon_1170.png">
+    <img id="stroke-large" title='Large Stroke' src="/assets/icon_12936.png">
+  </div>
+  
+</div>
+<br>
+
+<form id = "neuron-form" align = "center">
+<input type = "text" id = "neuron-name" placeholder = "Neuron Name" > <br><br>
+
+<button type = "button" class = "btn black-btn"id="save_button" onclick="saveDrawing()">Submit My Neuron</button>
+</form>
 
 
 

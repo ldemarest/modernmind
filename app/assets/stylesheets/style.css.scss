@@ -1,8 +1,7 @@
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+
   background-color: #fff;
 }
 
@@ -16,15 +15,6 @@ body {
   margin: 5px 0;
 }
 
-canvas#processing-canvas {
-  position: absolute;
-  left: 200px;
-  top: 100px;
-  z: -1;
-  outline: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  cursor: image-url('/assets/pencil.png'), auto;
-}
 
 .display_mind {
   position: absolute;
@@ -50,7 +40,7 @@ canvas#processing-canvas {
 
 #red{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -61,7 +51,7 @@ canvas#processing-canvas {
 }
 #orange{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -72,7 +62,7 @@ canvas#processing-canvas {
 }
 #yellow{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -83,7 +73,7 @@ canvas#processing-canvas {
 }
 #yellow{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -94,7 +84,7 @@ canvas#processing-canvas {
 }
 #green{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -105,7 +95,7 @@ canvas#processing-canvas {
 }
 #blue{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -116,7 +106,7 @@ canvas#processing-canvas {
 }
 #purple{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -127,7 +117,7 @@ canvas#processing-canvas {
 }
 #black{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -138,7 +128,7 @@ canvas#processing-canvas {
 }
 #white{
     display: block;
-    float: left;
+    float:right;
 
     border-radius: 50%;
     width: 25px;
@@ -153,7 +143,7 @@ canvas#processing-canvas {
 
 #opacity-small{
   display: block;
-  float: left;
+  float:right;
 
   border-radius: 50%;
   width: 25px;
@@ -165,7 +155,7 @@ canvas#processing-canvas {
 }
 #opacity-medium{
   display: block;
-  float: left;
+  float:right;
 
   border-radius: 50%;
   width: 25px;
@@ -177,7 +167,7 @@ canvas#processing-canvas {
 }
 #opacity-large{
   display: block;
-  float: left;
+  float:right;
 
   border-radius: 50%;
   width: 25px;
@@ -189,7 +179,7 @@ canvas#processing-canvas {
 }
 #stroke-small{
 /*  display: block;
-  float: left;
+  float:right;
 
   border-radius: 50%;
   width: 25px;
@@ -205,7 +195,7 @@ canvas#processing-canvas {
 }
 #stroke-medium{
 /*  display: block;
-  float: left;
+  float:right;
 
   border-radius: 50%;
   width: 25px;
@@ -221,7 +211,7 @@ canvas#processing-canvas {
 }
 #stroke-large{
 /*  display: block;
-  float: left;
+  float:right;
 
   border-radius: 50%;
   width: 25px;
