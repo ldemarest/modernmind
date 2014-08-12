@@ -1,0 +1,29 @@
+
+function changeUpvote() { 
+
+
+  var id = parseInt(<%= j @mind.id.to_s %>)
+  var name = "<%= j @mind.name %>";
+  var publicmind = "<%= j @mind.public.to_s %>"
+  var mindstatus
+
+  if (publicmind === "true"){
+    mindstatus = "Open Mind";
+  }
+  else{
+    mindstatus = "Closed Mind"
+
+  }
+
+
+
+  var appendItem = '<li><a href = /minds/'+id+'>'+name+'</a>'+' - '+mindstatus+'</li>'
+
+  $('#open-mind-list').append(appendItem);
+
+  $('#mind_name').val('');
+  
+  }
+
+
+$('#mind-create-button').on('click', changeUpvote());

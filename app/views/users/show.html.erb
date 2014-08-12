@@ -6,7 +6,7 @@
     <h3><strong> Create a Mind </strong></h3>
   </div> 
 
-  <%= form_for(@mind) do |f| %>
+  <%= form_for(@mind, remote: true) do |f| %>
 
     <% if @mind.errors.any? %>
       <div id="error_explanation">
@@ -31,7 +31,7 @@
     <%= f.label :user_tokens, "Please type in the members you want to add." %> 
     <%= f.text_field :user_tokens %><br>
   </div>
-    <%= f.submit %>
+    <%= f.submit "submit", :id =>"mind-create-button" %>
 
     <%end%>
 
@@ -40,7 +40,7 @@
 
 
   <div class="col-sm-2 col-md-4">  
-<ul>
+<ul id = "open-mind-list" >
    <div class="service-title">      
       <h3><strong> Developing Minds </strong></h3>
   </div>

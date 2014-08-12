@@ -25,6 +25,7 @@
       dataType: 'json',
       success: function (msg) {
         alert("Done, Picture Uploaded.");
+        window.location.reload();
      
       }
 
