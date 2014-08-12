@@ -1,5 +1,4 @@
 <%= render :partial => 'layouts/navbar' %>
-<%#= render :partial => 'layouts/slider' %>
 
 <div id="header-carousel" data-pause="false" class="carousel slide carousel-scroll header-carousel" data-ride="carousel"> 
     <!-- Slider Indicators -->
@@ -19,7 +18,8 @@
     </ol>   
     <div class="carousel-inner"> 
         <div class="carousel-caption header-carousel-caption">
-        </div>   
+        </div>
+      <% if @complete.length > 0 %>  
         <div class="item active"> 
           <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.first.image%>" > 
         </div>
@@ -37,6 +37,9 @@
         <div class="item">    
             <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.fourth.image%>" >  
         </div> 
+      <% else%>
+        <%= render :partial => 'layouts/slider' %>
+      <% end %>
 
     </div>   
 </div>
@@ -101,12 +104,14 @@
   <h3><strong> Complete Minds </strong></h3>
   </div>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+<% if @complete != nil %>
  <% @complete.each  do |mind| %>
   <li>
   <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %> 
 <%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>  
   </li>
   <%end%>
+<% end %>
 </ul>
 </div>
 
