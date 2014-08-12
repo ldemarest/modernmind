@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/zip' => 'neurons#zip'
   get '/minds/:id/completedmind' => 'minds#completedmind', :as => :completedmind
   get '/greatminds' => 'static_pages#greatminds', :as => :greatminds
-  get '/publicminds' => 'static_pages#publicminds', :as => :publicminds
+  get '/openminds' => 'static_pages#openminds', :as => :openminds
   get '/error' => 'static_pages#error', :as => :error
 
 
