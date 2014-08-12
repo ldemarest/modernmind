@@ -1,5 +1,5 @@
 
-function changeUpvote() { 
+function addMind() { 
 
 
   var id = parseInt(<%= j @mind.id.to_s %>)
@@ -26,4 +26,4 @@ function changeUpvote() {
   }
 
 
-$('#mind-create-button').on('click', changeUpvote());
+$('#mind-create-button').on('click', addMind());
