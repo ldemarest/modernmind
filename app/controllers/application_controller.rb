@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
  
   def require_login
     unless logged_in?
-      redirect_to root_url
+      # redirect_to root_url
+      redirect_to '/auth/facebook'
       flash[:notice] = "You must be logged in to access this section."
       flash.keep(:notice)
     end
