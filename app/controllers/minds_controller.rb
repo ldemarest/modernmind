@@ -1,6 +1,6 @@
 class MindsController < ApplicationController
 
-  before_action :require_login, only: [:create, :update]
+  before_action :require_login, only: [:create, :update, :show]
 
 
   def new
@@ -70,6 +70,7 @@ class MindsController < ApplicationController
       end
 
     end
+
   end
 
 
