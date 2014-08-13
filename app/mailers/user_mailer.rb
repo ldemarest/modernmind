@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   # default to: Proc.new { Mind.last.users.pluck(:email)},
-  default from: "demarest.luke@gmail.com"
+  default from: "mastermodernmind@gmail.com"
 
   def new_mind(initial_emails)
     
