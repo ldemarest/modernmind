@@ -16,9 +16,11 @@ class MindsController < ApplicationController
 
 
   def create
-
-    # @user = initial_emails
-    @user = initial_emails
+    if Mind.all.length == 0
+      @user = current_user
+    else
+      @user = initial_emails
+    end
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
     @mind.save
