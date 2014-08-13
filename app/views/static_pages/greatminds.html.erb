@@ -275,13 +275,5 @@ google.maps.event.addDomListener(window, 'load', initialize);
                                       
 
                 </div><!-- /row -->
-            </div><!-- /container -->
-
-<strong> Great minds </strong>
-<ul>
-  <% @great_minds.each do |mind| %>
-  <li>
-  <%= link_to mind.name, mind_path(mind) %> <%= mind.upvote.count %>
-</li>
-  <% end %>
+            </div><!-- /containe
 

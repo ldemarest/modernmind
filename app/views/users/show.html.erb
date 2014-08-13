@@ -10,6 +10,10 @@
 })
 
     </script>
+
+    <div class="carousel-caption header-carousel-caption">
+      <h1><br><%= current_user.name %></h1>
+    </div>
   
     <div class="carousel-inner"> 
         <div class="carousel-caption header-carousel-caption">
@@ -82,7 +86,7 @@
    <div class="service-title">      
       <h3><strong> Developing Minds </strong></h3>
   </div>
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+  <p>Open and closed minds with vacant neurons.</p>
   <% @incomplete.each  do |mind| %>
   <li>
     <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %>
