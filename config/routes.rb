@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :neurons
   end
 
-  root 'static_pages#login'
+  root 'static_pages#homepage'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/about' => 'static_pages#about'

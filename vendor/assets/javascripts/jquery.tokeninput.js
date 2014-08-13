@@ -22,7 +22,7 @@ var DEFAULT_SETTINGS = {
     jsonContainer: null,
 
 	// Display settings
-    hintText: "Type in a search term",
+    hintText: "Search for a member",
     noResultsText: "No results",
     searchingText: "Searching...",
     deleteText: "&times;",

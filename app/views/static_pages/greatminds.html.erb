@@ -209,6 +209,78 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 <%= render :partial => 'layouts/navbar' %>
+<br>
+
+<div class="container-fluid projects padding-top" style="background: #282828;">
+                <div class="row">
+
+                    <!-- Project Item (image, link and description for your project) -->
+                     <% @great_minds.each do |mind| %>
+                    <div class="col-sm-6" style="margin-bottom:50px;">
+                        <div class="project-inner">
+                            <a href="minds/<%= mind.id %>">  
+                                <!-- Image --> 
+                                <div id="header-carousel" data-pause="false" class="carousel slide carousel-scroll header-carousel" data-ride="carousel"> 
+                                 <script type="text/javascript">
+    $('.header-carousel').carousel({
+    interval: 1,
+    pause: 'none'
+})
+
+    </script> 
+                                <ol class="carousel-indicators">
+        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#header-carousel" data-slide-to="1"></li> 
+        <li data-target="#header-carousel" data-slide-to="2"></li>  
+        <li data-target="#header-carousel" data-slide-to="3"></li>
+    </ol>   
+    <div class="carousel-inner"> 
+        <div class="carousel-caption header-carousel-caption">
+        </div>
+   
+        <div class="item active"> 
+          <img id = "slide-image-1" src="data:image/png;base64, <%= mind.neurons.first.image%>" > 
+        </div>
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+          <img id = "slide-image-1" src="data:image/png;base64, <%= mind.neurons.second.image%>" >       
+        </div>   
+
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+            <img id = "slide-image-1" src="data:image/png;base64, <%= mind.neurons.third.image%>" > 
+        </div> 
+
+        <!-- Slider Item (image, link and description for your project in slider) -->
+        <div class="item">    
+            <img id = "slide-image-1" src="data:image/png;base64, <%= mind.neurons.fourth.image%>" >  
+        </div>                 
+                            </div>
+                                 </div>
+                                <div class="project-caption">
+                                    <!-- Title and Date -->
+                                    <div class="project-details">
+                                        <p><i class="fa fa-plus fa-lg"></i></p>     
+                                        <h3><%=mind.name%></h3>
+                                        <p><small>Upvotes: <%= mind.upvote.count %> </small></p>                                               
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>  
+                           
+                    <% end %>
+                  
+                             <div class="all-projects text-center">
+                <a href="projects.html" class="btn orange-btn">
+                    To Open Minds
+                </a>
+            </div>                      
+
+                                      
+
+                </div><!-- /row -->
+            </div><!-- /container -->
 
 <strong> Great minds </strong>
 <ul>

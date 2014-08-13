@@ -1,150 +1,9 @@
+
 <%= render :partial => 'layouts/navbar' %>
 
-<%= render :partial => 'layouts/slider' %>
-<div class="site-wrapper">
-
-                       
-            <div class="container text-center">
-                <!-- Section General Title -->
-                <div class="general-title">
-                    <h2>Modern Mind</h2>        
-                    <div class="title-devider"></div>
-                </div>
-                <div class="row">
-                  <!-- Section Description -->
-                  <div class="col-md-10 col-md-offset-1">
-                    <p>Modern Mind is a global platform for Exquisite Corpse, the surrealist drawing game invented in the early 20th century. Exquisite Corpse was a drawing game created by the surrealists, where artists would pass around a piece of paper blindly adding on to a drawing.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <br><br><br>      
-                  </div>          
-                </div><!-- /row -->       
-            </div><!-- /container -->                   
-            <!-- End Who We Are -->
-
-						<!-- Projects -->            
-            <div class="container-fluid projects padding-top" style="background: #282828;">
-                <div class="row">
-
-                    <!-- Project Item (image, link and description for your project) -->
-                    <div class="col-sm-6">
-                        <div class="project-inner">
-                            <a href="project-inner.html">  
-                                <!-- Image -->                  
-                               
-                                <%= render :partial => 'layouts/slider', id:"slider-2" %>                
-                                <div class="project-caption">
-                                    <!-- Title and Date -->
-                                    <div class="project-details">
-                                        <p><i class="fa fa-plus fa-lg"></i></p>     
-                                        <h3>Imaginary Landscapes</h3>
-                                        <p><small>2013/08</small></p>                                               
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>                                
-
-                    <!-- Project Item (image, link and description for your project) -->
-                    <div class="col-sm-6">
-                        <div class="project-inner">
-                            <a href="project-inner.html">    
-                                <!-- Image -->                
-                                <%= render :partial => 'layouts/slider', id:"slider-3" %>                  
-                                <div class="project-caption">
-                                    <!-- Title and Date -->
-                                    <div class="project-details">
-                                        <p><i class="fa fa-plus fa-lg"></i></p>
-                                        <h3>Hands</h3>
-                                        <p><small>2013/02</small></p>                                                
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>                            
-
-                                      
-
-                </div><!-- /row -->
-            </div><!-- /container -->
 
 
-            <!-- See All Our Work Button -->
-            <div class="all-projects text-center">
-                <a href="projects.html" class="btn orange-btn">
-                    Great Minds
-                </a>
-            </div>
-                            
-            <!-- End Projects -->
 
-            <!-- Our Services -->            
-            <div class="container padding-top text-center"> 
-                <!-- Section General Title -->       
-                <div class="general-title">
-                    <h2>How To Play</h2>        
-                    <div class="title-devider"></div>
-                </div>  
-                <!-- Section Description -->             
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>    
-                <div class="row padding-top"> 
-
-                <%= image_tag "image2.jpg", id:"slider-image-1"%>
-
-                <div class="row padding-top">  
-
-                    <!-- Services Item (icon, title and description for your service) -->                        
-                    <div class="col-sm-4 col-md-4">  
-                        <!-- Icon -->
-                        <a href="services.html">                                
-                            <i class="fa fa-home fa-3x"></i>     
-                        </a> 
-                        <!-- Title -->  
-                        <div class="service-title">      
-                            <h3>Create a Private Mind</h3> 
-                        </div>   
-                        <!-- Description -->                  
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
-                    </div>
-
-                    <!-- Services Item (icon, title and description for your service) -->
-                    <div class="col-sm-4 col-md-4">
-                        <!-- Icon -->  
-                        <a href="services.html">
-                            <i class="fa fa-building fa-3x"></i>          
-                        </a> 
-                        <!-- Title -->
-                        <div class="service-title">
-                            <h3>Contribute a Neuron</h3>
-                        </div>
-                        <!-- Description -->
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
-                    </div>                        
-
-                    <!-- Services Item (icon, title and description for your service) -->
-                    <div class="col-sm-4 col-md-4">
-                        <!-- Icon -->
-                        <a href="services.html">
-                            <i class="fa fa-file-text-o fa-3x"></i> 
-                        </a>
-                        <!-- Title -->
-                        <div class="service-title">
-                            <h3>Create a Public Mind</h3>
-                        </div>
-                        <!-- Description -->
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>                 
-                    </div>                          
-
-                </div><!-- /row -->
-
-                <!-- View All Services Button -->  
-                <div class="padding-top padding-bottom">  
-                    <a href="services.html" class="btn black-btn">
-                        Get Started
-                    </a>
-                </div>
-
-            </div><!-- /container -->
-            <!-- End Our Services -->
-                
             <!-- From Blog -->
             <section class="bg-color padding-top text-center">
                 <div class="container">
@@ -154,34 +13,32 @@
                         <div class="title-devider"></div>
                     </div>
                     <ul>
-										  <% @incomplete_minds.each do |mind| %>
-										    
-										    <div class="col-xs-6 col-msm-4">
-										        <div class="thumbnail blog-post">
-										           
-										            <!-- Title and Description -->
-										            <div class="caption">
-										                <div class="blog-inner-title">
-										                    <a href="blog-inner.html">
-										                        <h3><%= mind.name %></h3>
-										                    </a>
-										                </div>
-										                                       
-										                <div class="blog-meta">
-										                    
-										                    <span><i class="fa fa-comment"></i> <h3>5 upvotes</h3></span>
-										                </div>
-										            </div>
-										        </div>
-										    </div>
-										      <% end %>
+	               <% @incomplete_minds.each do |mind| %>
+				    
+				    <div class="col-xs-6 col-msm-4">
+				        <div class="thumbnail blog-post">
+				           
+				            <!-- Title and Description -->
+				            <div class="caption">
+				                <div class="blog-inner-title">
+				                    <a href="blog-inner.html">
+				                        <h3><a href= "minds/<%= mind.id%>"><%= mind.name %></a> </h3>
+				                    </a>
+				                </div>
+				                                       
+				                <div class="blog-meta">
+				                    
+				                    <span><i class="fa fa-comment"></i> <h3><%= 4-mind.neurons.size%> Neurons left</h3></span>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				      <% end %>
 									</ul>
                 </div><!-- /container -->
 
                 <!-- All Posts Button -->
-                <div class="text-center padding-top padding-bottom">
-                    <a href="blog.html" class="btn black-btn">All Public Minds</a>
-                </div>                
+               
             </section>
             <!-- End From Open Public Minds -->
 
@@ -190,16 +47,4 @@
         </div>
 
 
-<strong> completed minds </strong>
-<ul>
-  <% @completed_minds.each do |mind| %>
-  <li>
-  <%= link_to mind.name, mind_path(mind) %>
-</li>
-  <% end %>
-
-
-</ul>
-<br>
-<strong> incomplete minds </strong>
 

@@ -10,12 +10,7 @@
 })
 
     </script>
-    <ol class="carousel-indicators">
-        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#header-carousel" data-slide-to="1"></li> 
-        <li data-target="#header-carousel" data-slide-to="2"></li>  
-        <li data-target="#header-carousel" data-slide-to="3"></li>
-    </ol>   
+  
     <div class="carousel-inner"> 
         <div class="carousel-caption header-carousel-caption">
         </div>
@@ -61,10 +56,11 @@
       </div>
     <% end %>
   <div id ="mind-name-box">
-    <%=f.label :name %>
-    <%= f.text_field :name, required: true %><br>
+
+    <%= f.text_field :name , :placeholder => "Mind name" , required: true %><br>
+
    </div> 
-    <!-- <%= f.label :public, "I want my mind to be public"%><br> -->
+   
     <%= f.label :public, "Open" %>
     <%= f.radio_button :public, true, :checked => true  %>
     <%= f.label :public, "Closed" %>
@@ -73,7 +69,7 @@
     <%= f.label :user_tokens, "Please type in the members you want to add." %> 
     <%= f.text_field :user_tokens %><br>
   </div>
-    <%= f.submit "submit", :id =>"mind-create-button" %>
+    <%= f.submit "submit", :id =>"mind-create-button" ,:class => "btn btn-default btn-submit submit"%>
 
     <%end%>
 
@@ -99,7 +95,7 @@
 
 
 <div class="col-sm-2 col-md-4">  
-<ul >
+<ul id = "complete-minds-user-show">
 <div class="service-title"> 
   <h3><strong> Complete Minds </strong></h3>
   </div>
@@ -107,8 +103,9 @@
 <% if @complete != nil %>
  <% @complete.each  do |mind| %>
   <li>
+  <%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>
   <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %> 
-<%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>  
+  
   </li>
   <%end%>
 <% end %>
