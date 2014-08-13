@@ -75,7 +75,7 @@
                         <div class="title-devider"></div>
                     </div>
                   <div style = " width:70%; margin:auto;">  
-            <ul id = "complete-minds-user-show">
+            <ul id = "complete-minds-user-shows">
            <% @completed_minds.each do |mind| %>
             <li><%= image_tag 'icon_2751.png',id: "upvote-icon-completed" %>  <%=mind.upvote.count%> - <%= link_to  mind.name, mind %></li>
             <% end %>
