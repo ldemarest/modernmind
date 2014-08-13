@@ -60,11 +60,12 @@
         </ul>
       </div>
     <% end %>
-    
+  <div id ="mind-name-box">
     <%=f.label :name %>
-    <%= f.text_field :name , :placeholder => "Mind name" %><br>
-    
-    <!-- <%= f.label :public, "I want my mind to be public"%><br> -->
+    <%= f.text_field :name , :placeholder => "Mind name" , required: true %><br>
+
+   </div> 
+   
     <%= f.label :public, "Open" %>
     <%= f.radio_button :public, true, :checked => true  %>
     <%= f.label :public, "Closed" %>

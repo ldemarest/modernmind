@@ -16,7 +16,7 @@
     var neuron_json = JSON.stringify({"neuron" : {"image": Pic, "name": name }, "user_mind" : {"mind_id": id}});
 
 
-
+    if(name !== ""){
     // Sending the image data to Server
     $.ajax({
       type: 'POST',
@@ -33,8 +33,14 @@
         });
 
         $('#neuronModal').modal('show');
-        }
 
+      }
       });
-
+    }
+     else {
+      $('#neuron-name').css({"border-color": "#FF0000", 
+             "border-width":"2px", 
+             "border-style":"solid"});
+    }
   }
+

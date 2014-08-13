@@ -110,7 +110,6 @@ class MindsController < ApplicationController
 
 
   def initial_emails
-
     @emails = []
     if Mind.all.last.users.exists?
       Mind.all.last.users.each do |user|

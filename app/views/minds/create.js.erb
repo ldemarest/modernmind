@@ -23,9 +23,13 @@ function addMind() {
   $('#open-mind-list').append(appendItem);
 
   $('#mind_name').val('');
+
  $("li.token-input-token-facebook").remove();
 
   }
 
 
-$('#mind-create-button').on('click', addMind());
+// if($("#mind_name").val() !== null){
+  $('#mind-create-button').on('click', addMind());
+// }
+
