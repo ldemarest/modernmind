@@ -1,7 +1,11 @@
 <%= render :partial => 'layouts/navbar' %>
 
   <h1 style = "text-align:center;"> <strong><%= @mind.name%></strong> <br> has
-    <strong><%= 4 - @neurons.size %></strong> neurons left </h1> <br>
+    <% if  4 - @neurons.size > 1 %>
+      <strong><%= 4 - @neurons.size %></strong> neurons left </h1> <br>
+    <% elsif 4 - @neurons.size == 1 %>
+      <strong><%= 4 - @neurons.size %></strong> neuron left </h1> <br>
+    <% end %>
 
   <table align = "center" >
     <tr>
