@@ -15,7 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require app
+
 //= require processing
 //= require drawingcanvas
 //= require jquery.tokeninput
@@ -23,7 +23,6 @@
 //= require users
 //= require fieldhide
 //= require tokenfield
-//= require smoothscroll
 //= require icheck
 //= require starticheck
 

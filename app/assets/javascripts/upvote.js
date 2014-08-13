@@ -1,3 +1,3 @@
 $(function() {
-$('#upvote-count').html("Upvotes: 0")
+	$('#upvote-count').html("Upvotes: 0")
 });
