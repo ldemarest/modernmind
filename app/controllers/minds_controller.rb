@@ -14,6 +14,7 @@ class MindsController < ApplicationController
 
   def create
 
+    # @user = initial_emails
     @user = initial_emails
     @mind = Mind.create(mind_params)
     @mind.user_minds.build(:user_id => current_user.id)
@@ -36,8 +37,8 @@ class MindsController < ApplicationController
     respond_to do |format|
       if @mind.save
         # Tell the UserMailer to send a welcome email after save
-        UserMailer.new_mind(@user).deliver
-        format.html { redirect_to(user_path(current_user), notice: 'User was successfully created.') }
+        # UserMailer.new_mind(@user).deliver
+        format.html { redirect_to(user_path(current_user)) }
         format.json { render json: @user, status: :created, location: @user }
         format.js
       else
@@ -111,6 +112,7 @@ class MindsController < ApplicationController
 
   def initial_emails
     @emails = []
+
     if Mind.all.last.users.exists?
       Mind.all.last.users.each do |user|
         @emails << user.email
