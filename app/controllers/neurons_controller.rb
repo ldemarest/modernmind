@@ -1,4 +1,8 @@
 class NeuronsController < ApplicationController
+
+  before_action :require_login, only: [:index, :create]
+  # before_action :require_login, except: :create
+
   def index
     @neurons = Neuron.all
   end
@@ -22,10 +26,6 @@ class NeuronsController < ApplicationController
 
    
 
-  end
-
-  def zip
-    @neuron = Neuron.find(7).image
   end
 
   private

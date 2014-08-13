@@ -6,12 +6,13 @@ class ApplicationController < ActionController::Base
  
   private
  
-  # helper_method def require_login
-  #   unless logged_in?
-  #     flash[:error] = "You must be logged in to access this section."
-  #     redirect_to root_url
-  #   end
-  # end
+  def require_login
+    unless logged_in?
+      redirect_to root_url
+      flash[:notice] = "You must be logged in to access this section."
+      flash.keep(:notice)
+    end
+  end
 
   helper_method def logged_in?
     !!current_user
