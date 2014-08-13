@@ -1,5 +1,8 @@
 class MindsController < ApplicationController
 
+  before_action :require_login, only: [:create, :update]
+
+
   def new
     @mind = Mind.new
 

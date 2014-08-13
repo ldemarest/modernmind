@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  # before_action :require_login, only: :openminds
+
   def about
     
   end
@@ -20,6 +22,8 @@ class StaticPagesController < ApplicationController
 
   end
 
+# this should be a method in the Mind model
+# called something like find_ten_most_popular_minds
   def greatminds
     # all minds that
     @great_minds = Mind.
