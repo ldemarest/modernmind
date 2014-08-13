@@ -2,21 +2,25 @@ $(function () {
 
   $('#add-users').hide()
     
-  $('#mind_public_true').click(function(){
+  $('input').on('ifClicked', function(event){
+
+    if ( $('.checked').html().indexOf("false") !== -1){
+    $('#add-users').hide()
 
 
-  $('#add-users').hide()
+    }
 
-
-  })
-
-  $('#mind_public_false').click(function(){
-
-
+    else {
+     
   $('#add-users').show()
+    }
+  });
+
+ 
 
 
-  })
+
+
 
 
 
