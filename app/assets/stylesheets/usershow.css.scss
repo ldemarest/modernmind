@@ -18,5 +18,29 @@
    margin-top:-3px;
   }
 
+  #mind-name-box input, select { 
+  width: 100%; 
+  padding: 12.9px; 
+  color: #444; 
+  background: #fff; 
+  border: 1px solid #8c92ac; 
+  margin: 7px 0px;  
+  font-weight: 100;
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+  box-shadow: none;
+  outline: 0 none;
+}
+
+#mind-name-box input:focus, textarea:focus, select:focus{ 
+  border: 1px solid #999; 
+  background-color: #fff; 
+  color:#333; 
+}
+#mind-name-box span.required{ 
+  font-size: 13px; 
+  color: #ff0000; 
+}
+
 
 

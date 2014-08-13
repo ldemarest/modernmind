@@ -26,7 +26,7 @@
       dataType: 'json',
       success: function (msg) {
 
-        $('#modal-body').append('<br><a href ='+url+'> Contribute to my mind!</a>');
+        $('#modal-body').append('<a href ='+url+'>'+ url+'</a>');
 
         $('#modal-close').click(function(){
           window.location = '/minds/'+id;
@@ -34,12 +34,12 @@
 
         $('#neuronModal').modal('show');
 
-      }
-      });
+        }
+        });
     }
      else {
       $('#neuron-name').css({"border-color": "#FF0000", 
-             "border-width":"2px", 
+             "border-width":"4px", 
              "border-style":"solid"});
     }
   }

@@ -5163,7 +5163,7 @@ button.close {
 .modal-footer {
   padding: 19px 20px 20px;
   margin-top: 15px;
-  text-align: right;
+  text-align: center;
   border-top: 1px solid #e5e5e5;
 }
 .modal-footer .btn + .btn {
@@ -5423,8 +5423,11 @@ button.close {
 .carousel-inner > .item {
   position: relative;
   display: none;
-  -webkit-transition: 6s ease-in-out left;
-          transition: 6s ease-in-out left;
+  -webkit-transition: 5s linear left;
+-moz-transition: 5s linear left;
+-o-transition: 5s linear left;
+transition: 5s linear left;
+
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {

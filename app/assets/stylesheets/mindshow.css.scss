@@ -36,13 +36,21 @@
 
 #color-options{ 
  
-
   width:300px;
   display: inline-block;
   float:left;
-  margin-left: 20px;
+  margin-left: 85px;
+  margin-top: 5px;
 
 }
+
+
+#color-options strong{ 
+margin-top:200000px;
+
+}
+
+
 
 #neuron-form{
 
@@ -65,8 +73,9 @@
 }
 
 #canvas-options{
-  width: 80%;
+  width: 950px;
   margin: auto;
+ 
 
 }
 
@@ -83,7 +92,27 @@
 
 #modal-body{
   text-align: center;
-
   margin: auto;
+}
+
+#modal-close{
+  margin:auto;
+
+}
+
+#neuron-form input, select { 
+  width: 300px; 
+  padding: 12.9px; 
+  color: #444; 
+  background: #fff; 
+  border: 1px solid #8c92ac; 
+  margin: 7px 0px;  
+  font-weight: 100;
+}
+
+#modal-body-p{
+  width: 90%;
+  margin:auto;
+
 
 }

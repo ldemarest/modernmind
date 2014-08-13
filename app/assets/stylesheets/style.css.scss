@@ -16,17 +16,6 @@ body {
 }
 
 
-.display_mind {
-  position: absolute;
-  left: 0px;
-  top: 100px;
-  z-index: 2;
-  height: 401px;
-  width: 150px;
-  pointer-events: none;
-  background: white;
-}
-
 #neurons {
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -39,15 +28,12 @@ body {
   }
 
 #red{
-    display: block;
-    float:right;
-
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    background: red;
-
-    margin-right: 5px;
+  display: block;
+  float:right;
+  background-color: red;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
 }
 #orange{
     display: block;

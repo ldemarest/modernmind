@@ -61,7 +61,7 @@
       </div>
     <% end %>
   <div id ="mind-name-box">
-    <%=f.label :name %>
+
     <%= f.text_field :name , :placeholder => "Mind name" , required: true %><br>
 
    </div> 
@@ -74,7 +74,7 @@
     <%= f.label :user_tokens, "Please type in the members you want to add." %> 
     <%= f.text_field :user_tokens %><br>
   </div>
-    <%= f.submit "submit", :id =>"mind-create-button" %>
+    <%= f.submit "submit", :id =>"mind-create-button" ,:class => "btn btn-default btn-submit submit"%>
 
     <%end%>
 
