@@ -107,7 +107,7 @@
 <% if @complete != nil %>
  <% @complete.each  do |mind| %>
   <li>
-  <%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>
+ 
   <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %> 
   
   </li>
