@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
+  # skip_before_action :require_login, only: [:show, :index]
+
   def show
-    # binding.pry
     @user = current_user
     @mind = Mind.new
     @complete = @user.complete_minds
