@@ -4,7 +4,18 @@ class StaticPagesController < ApplicationController
     
   end
 
-  def home
+  def homepage
+
+        @great_minds = Mind.
+      joins(:neurons, :upvote).
+      # are public
+      where(:public => true).
+      # have >= 5 neurons
+      group('user_minds.mind_id').
+        having('COUNT(neurons.id) >= 4').
+      # are in the top 10 by number of upvotes
+      order('upvotes.count DESC').
+        limit(2)
 
   end
 
