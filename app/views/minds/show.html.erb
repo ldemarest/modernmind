@@ -57,10 +57,27 @@
 
 <form id = "neuron-form" align = "center">
 <input type = "text" id = "neuron-name" placeholder = "Neuron Name" > <br><br>
-
-<button type = "button" class = "btn black-btn"id="save_button" onclick="saveDrawing()">Submit My Neuron</button>
+<button type = "button" class = "btn black-btn" id="save_button" onclick="saveDrawing()">Submit My Neuron</button>
 </form>
 
+ <div class="modal fade" id="neuronModal" tabindex="-1" role="dialog" aria-labelledby="neuronModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h2 class="modal-title" id="modalLabel">ModernMind</h2>
+            </div>
+            <div id="modal-body">
+                <%= image_tag "icon_14291.png",id: "share-mind"%><br>
+                Your neuron has been saved, thank you for contributing! You will recieve an email once the mind has been completed. You can continue drawing or send the link below to a friend and draw together.<br>
+                Mind link: 
+            </div>
+
+            <div class="modal-footer">
+                <button type="button"  data-dismiss="modal" id="modal-close">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
 
 
 

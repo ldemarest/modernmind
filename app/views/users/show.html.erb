@@ -62,7 +62,7 @@
     <% end %>
     
     <%=f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name , :placeholder => "Mind name" %><br>
     
     <!-- <%= f.label :public, "I want my mind to be public"%><br> -->
     <%= f.label :public, "Open" %>
@@ -99,7 +99,7 @@
 
 
 <div class="col-sm-2 col-md-4">  
-<ul >
+<ul id = "complete-minds-user-show">
 <div class="service-title"> 
   <h3><strong> Complete Minds </strong></h3>
   </div>
@@ -107,8 +107,9 @@
 <% if @complete != nil %>
  <% @complete.each  do |mind| %>
   <li>
+  <%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>
   <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %> 
-<%= image_tag "icon_2751.png", id: "upvote-icon-show" %>  <%=mind.upvote.count%>  
+  
   </li>
   <%end%>
 <% end %>
