@@ -61,7 +61,7 @@
                     <% end %>
                   
                              <div class="all-projects text-center">
-                <a href="projects.html" class="btn orange-btn">
+                <a href="/openminds" class="btn orange-btn">
                     To Open Minds
                 </a>
             </div>                      
@@ -70,5 +70,18 @@
                 </div><!-- /row -->
 
             </div><!-- /container -->
+            <div class="general-title">
+                        <h2>Open completed minds</h2>
+                        <div class="title-devider"></div>
+                    </div>
+                  <div style = " width:70%; margin:auto;">  
+            <ul id = "complete-minds-user-show">
+           <% @completed_minds.each do |mind| %>
+            <li><%= image_tag 'icon_2751.png',id: "upvote-icon-completed" %>  <%=mind.upvote.count%> - <%= link_to  mind.name, mind %></li>
+            <% end %>
+        </ul>
+    </div>
+
+
 
 

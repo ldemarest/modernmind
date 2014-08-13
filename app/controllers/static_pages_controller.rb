@@ -37,6 +37,8 @@ class StaticPagesController < ApplicationController
 # called something like find_ten_most_popular_minds
   def greatminds
     # all minds that
+    @completed_minds = Mind.completed_minds
+    
     @great_minds = Mind.
       joins(:neurons, :upvote).
       # are public
