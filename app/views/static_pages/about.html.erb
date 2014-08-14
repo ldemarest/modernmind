@@ -1,12 +1,9 @@
-
 <p style="float: center;">"Create a Mind."</p>
-
 <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
 <br>
 <canvas id="scroller" width="2000%" height="600" style="  background: whiteSmoke;
-  display: block;
-  margin: 10px auto;" ></canvas>
-
+display: block;
+margin: 10px auto;" ></canvas>
 <script>
 window.requestAnimationFrame = function() {
 	return window.requestAnimationFrame ||
@@ -18,22 +15,16 @@ window.requestAnimationFrame = function() {
 			window.setTimeout(f,1e3/60);
 		}
 }();
-
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
-
 var W = canvas.width;
 var H = canvas.height;
-
 // We want to move/slide/scroll the background
 // as the player moves or the game progresses
-
 // Velocity X
 var vx = 0;
-
 var img = new Image();
 img.src = 'http://www.stephenwiltshire.co.uk/images/Madrid_Panorama_by_Stephen_Wiltshire.jpg';
-
 (function renderGame() {
 	window.requestAnimationFrame(renderGame);
 	
@@ -51,30 +42,27 @@ img.src = 'http://www.stephenwiltshire.co.uk/images/Madrid_Panorama_by_Stephen_W
 	
 	vx -= 2;
 }());
-
 </script>
-
 <div id="container">
-<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
-<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
-<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
-<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
-<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
+	<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
+	<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
+	<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
+	<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
+	<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=13414581" style="float: center;" height="50">
 </div>
-
 <p style="float: center;">"Contribute a neuron."</p>
 <br>
 <img src="http://benfry.com/wp/wp-content/uploads/2008/06/bayle-worldmap.jpg" style="float: center;" >
 <div>
-<p style="float: center;">"ModernMind is a global art experiment inspired in the surrealist drawing exercise "the exquisite corpse". The exquisite corpse was Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ModernMind takes this and taht from ec Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p style="float: center;">"ModernMind is a global art experiment inspired in the surrealist drawing exercise "the exquisite corpse". The exquisite corpse was Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ModernMind takes this and taht from ec Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>

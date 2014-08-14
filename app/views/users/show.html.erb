@@ -1,119 +1,97 @@
 <%= render :partial => 'layouts/navbar' %>
-
-<div id="header-carousel" data-pause="false" class="carousel slide carousel-scroll header-carousel" data-ride="carousel"> 
-    <!-- Slider Indicators -->
-
-    <script type="text/javascript">
-    $('.header-carousel').carousel({
-    interval: 1,
-    pause: 'none'
-})
-
-    </script>
-
-    <div class="carousel-caption header-carousel-caption">
-      <h1><br><%= current_user.name %></h1>
-    </div>
+<div id="header-carousel" data-pause="false" class="carousel slide carousel-scroll header-carousel" data-ride="carousel">
+  <!-- Slider Indicators -->
+  <script type="text/javascript">
+  $('.header-carousel').carousel({
+  interval: 1,
+  pause: 'none'
+  })
+  </script>
+  <div class="carousel-caption header-carousel-caption">
+    <h1><br><%= current_user.name %></h1>
+  </div>
   
-    <div class="carousel-inner"> 
-        <div class="carousel-caption header-carousel-caption">
-        </div>
-      <% if @complete.length > 0 %>  
-        <div class="item active"> 
-          <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.first.image%>" > 
-        </div>
-        <!-- Slider Item (image, link and description for your project in slider) -->
-        <div class="item">    
-          <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.second.image%>" >       
-        </div>   
-
-        <!-- Slider Item (image, link and description for your project in slider) -->
-        <div class="item">    
-            <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.third.image%>" > 
-        </div> 
-
-        <!-- Slider Item (image, link and description for your project in slider) -->
-        <div class="item">    
-            <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.fourth.image%>" >  
-        </div> 
-      <% else%>
-        <%= render :partial => 'layouts/slider' %>
-      <% end %>
-
-    </div>   
+  <div class="carousel-inner">
+    <div class="carousel-caption header-carousel-caption">
+    </div>
+    <% if @complete.length > 0 %>
+    <div class="item active">
+      <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.first.image%>" >
+    </div>
+    <!-- Slider Item (image, link and description for your project in slider) -->
+    <div class="item">
+      <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.second.image%>" >
+    </div>
+    <!-- Slider Item (image, link and description for your project in slider) -->
+    <div class="item">
+      <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.third.image%>" >
+    </div>
+    <!-- Slider Item (image, link and description for your project in slider) -->
+    <div class="item">
+      <img id = "slide-image-1" src="data:image/png;base64, <%= @complete.last.neurons.fourth.image%>" >
+    </div>
+    <% else%>
+    <%= render :partial => 'layouts/slider' %>
+    <% end %>
+  </div>
 </div>
 <div class="col-sm-2 col-md-4">
-  <div class="service-title"> 
+  <div class="service-title">
     <h3><strong> Create a Mind </strong></h3>
-  </div> 
-
+  </div>
   <%= form_for(@mind, remote: true) do |f| %>
-
-    <% if @mind.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@mind.errors.count, "error") %> prohibited this mind from being saved:</h2>
-        <ul>
-        <% @mind.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <% if @mind.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@mind.errors.count, "error") %> prohibited this mind from being saved:</h2>
+    <ul>
+      <% @mind.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
   <div id ="mind-name-box">
-
     <%= f.text_field :name , :placeholder => "Mind name" , required: true %><br>
-
-   </div> 
-   
-    <%= f.label :public, "Open" %>
-    <%= f.radio_button :public, true, :checked => true  %>
-    <%= f.label :public, "Closed" %>
-    <%= f.radio_button :public, false%><br>
-   <div id ="add-users">
-    <%= f.label :user_tokens, "Please type in the members you want to add." %> 
+  </div>
+  
+  <%= f.label :public, "Open" %>
+  <%= f.radio_button :public, true, :checked => true  %>
+  <%= f.label :public, "Closed" %>
+  <%= f.radio_button :public, false%><br>
+  <div id ="add-users">
+    <%= f.label :user_tokens, "Please type in the members you want to add." %>
     <%= f.text_field :user_tokens %><br>
   </div>
-    <%= f.submit "submit", :id =>"mind-create-button" ,:class => "btn btn-default btn-submit submit"%>
-
-    <%end%>
-
+  <%= f.submit "submit", :id =>"mind-create-button" ,:class => "btn btn-default btn-submit submit"%>
+  <%end%>
 </div>
-
-
-
-  <div class="col-sm-2 col-md-4">  
-<ul id = "open-mind-list" >
-   <div class="service-title">      
+<div class="col-sm-2 col-md-4">
+  <ul id = "open-mind-list" >
+    <div class="service-title">
       <h3><strong> Developing Minds </strong></h3>
-  </div>
-  <p>Open and closed minds with vacant neurons.</p>
-  <% @incomplete.each  do |mind| %>
-  <li>
-    <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %>
-  </li>
-  <%end%>
-
-</ul>
+    </div>
+    <p>Open and closed minds with vacant neurons.</p>
+    <% @incomplete.each  do |mind| %>
+    <li>
+      <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %>
+    </li>
+    <%end%>
+  </ul>
 </div>
-
-
-
-<div class="col-sm-2 col-md-4">  
-<ul id = "complete-minds-user-show">
-<div class="service-title"> 
-  <h3><strong> Complete Minds </strong></h3>
-  </div>
+<div class="col-sm-2 col-md-4">
+  <ul id = "complete-minds-user-show">
+    <div class="service-title">
+      <h3><strong> Complete Minds </strong></h3>
+    </div>
     <p>Open and closed minds with completed neurons.</p>
-<% if @complete != nil %>
- <% @complete.each  do |mind| %>
-  <li>
- 
-  <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %> 
-  
-  </li>
-  <%end%>
-<% end %>
-</ul>
+    <% if @complete != nil %>
+    <% @complete.each  do |mind| %>
+    <li>
+      
+      <%=link_to mind.name, mind%> - <%if mind.public == true %> <%="Open Mind"%> <%else%> <%="Closed Mind"%> <% end %>
+      
+    </li>
+    <%end%>
+    <% end %>
+  </ul>
 </div>
-
-
