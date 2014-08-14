@@ -6,19 +6,19 @@ function changeUpvote() {
 
   $('#upvote-count').html("Upvotes: "+'<%= j @upvotes.count.to_s %>')
 
-  $('#upvote-button').val() == "Upvote" ? upvote_Start() : upvoted();
+  $('#upvote-button-complete').val() == "Upvote" ? upvote_Start() : upvoted();
 
 
   }
 
 function upvote_Start() {
-    $('#upvote-button').val("Upvoted");
+    $('#upvote-button-complete').val("Upvoted");
 
 
   }
   
 function upvoted() {
-    $('#upvote-button').val("Upvote");
+    $('#upvote-button-complete').val("Upvote");
 
   }
 

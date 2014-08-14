@@ -27,12 +27,11 @@
   </tr>
 
 </table>  
-
 <%= image_tag "icon_2751.png", id: "upvote-icon" %>
 
 
 
-<span id = "upvote-count">Upvotes: <%=@upvote.count%> </span>
+<strong><span id = "upvote-count">Upvotes: <%=@upvote.count%> </span></strong>
 
 
 <% if @mind.upvote == nil || !@mind.upvote.users.include?(current_user) %>
