@@ -1,12 +1,45 @@
-var colorPurple = #cb3594;
-var colorGreen = #659b41;
-var colorYellow = #ffcf33;
-var colorBlue = #0000FF;
-var colorRed = #CC0000;
-var colorOrange = #FF6600;
-var colorBlack =  #000000;
-var colorWhite = #FFFFFF;
-var eraser = #FFEFD5;
+// var colorPurple = #cb3594;
+// var colorGreen = #659b41;
+// var colorYellow = #ffcf33;
+// var colorBlue = #0000FF;
+// var colorRed = #CC0000;
+// var colorOrange = #FF6600;
+// var colorBlack =  #000000;
+// var colorWhite = #FFFFFF;
+// var eraser = #FFEFD5;
+
+var purpleR  = 203;
+var purpleG = 53;
+var purpleR = 148;
+var greenR = 101;
+var greenG = 155;
+var greenB = 65;
+var yellowR = 255;
+var yellowG = 207;
+var yellowB = 5;
+var blueR = 0;
+var blueG = 0;
+var blueB = 255;
+var redR = 255;
+var redG = 0;
+var redB = 0;
+var orangeR = 255;
+var orangeG = 102;
+var orangeB = 0;
+var blackR = 0;
+var blackG = 0;
+var blackB = 0;
+var whiteR = 255;
+var whiteG = 255;
+var whiteB = 255;
+var eraserR = 255;
+var eraserG = 239;
+var eraserB = 213;
+
+
+
+
+
 
 var strokeSmall = 1;
 var strokeMedium = 8;
@@ -22,39 +55,39 @@ var curStroke = strokeSmall;
   
 
   $("#red").click(function () {
-    curColor = colorRed;
+    curColor = (redR, redG, redB);
   });
 
   $("#orange").click(function () {
-    curColor = colorOrange;
+    curColor = (orangeR, orangeG, orangeB);
   });
 
   $("#yellow").click(function () {
-    curColor = colorYellow;
+    curColor = (yellowR, yellowG, yellowB);
   });
 
   $("#green").click(function () {
-    curColor = colorGreen;
+    curColor = (greenR, greenG, greenB);
   });
 
   $("#blue").click(function () {
-    curColor = colorBlue;
+    curColor = (blueR, blueG, blueB);
   });
 
   $("#purple").click(function () {
-    curColor = colorPurple;
+    curColor = (purpleR, purpleG, purpleB);
   });
 
   $("#black").click(function () {
-    curColor = colorBlack;
+    curColor = (blackR, blackG, blackB);
   });
 
   $("#white").click(function () {
-    curColor = colorWhite;
+    curColor = (whiteG, whiteG, whiteB);
   });
 
   $("#eraser").click(function () {
-    curColor = eraser;
+    curColor = (eraserR, eraserG, eraserB);
   });
 
   $("#stroke-small").click(function () {
