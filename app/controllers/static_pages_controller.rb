@@ -13,11 +13,12 @@ class StaticPagesController < ApplicationController
       # are public
       where(:public => true).
       # have >= 5 neurons
-      group('user_minds.mind_id').
-      having('COUNT(neurons.id) >= 4').
+      group('minds.id').
+      having('COUNT(neurons.id) >= 4').limit(2)
+
       # are in the top 10 by number of upvotes
-      order('upvotes.count DESC').
-      limit(2)
+      # order('upvotes.count DESC').
+      # limit(2)
 
   end
 
@@ -40,15 +41,12 @@ class StaticPagesController < ApplicationController
     @completed_minds = Mind.completed_minds
 
     @great_minds = Mind.
-      joins(:neurons, :upvote).
+
       # are public
-      where(:public => true).
+      where(:public => true)
+
       # have >= 5 neurons
-      group('user_minds.mind_id').
-      having('COUNT(neurons.id) >= 4').
-      # are in the top 10 by number of upvotes
-      order('upvotes.count DESC').
-      limit(10)
+     
   end
 
 
