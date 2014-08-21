@@ -7,11 +7,14 @@
     <head>
         <title>ModernMind</title>
           <%= csrf_meta_tags %>
+
           <%= stylesheet_link_tag    'application', media: 'all' %>
           <%= javascript_include_tag 'application' %>
-          <%= javascript_include_tag 'drawingcanvas', {type:"text/processing", :"data-processing-target" =>"processing-canvas"} %>
-          <%= javascript_include_tag 'mindlogo', {type:"text/processing", :"data-processing-target" =>"mind-logo"} %>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+         <script src="/drawingcanvas.js" type="text/processing" data-processing-target="processing-canvas"></script>
+          <script src="/mindlogo.js" type="text/processing" data-processing-target="mind-logo"></script>
+          
+          <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
           <%= analytics_init if Rails.env.production? %>
 
         <!-- Meta Tags -->
