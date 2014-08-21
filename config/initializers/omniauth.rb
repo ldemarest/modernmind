@@ -1,4 +1,4 @@
-OMniAuth.config.logger = Rails.logger
+OmniAuth.config.logger = Rails.logger
 	if ENV['RAILS_ENV'] == 'production'
 		HOST = 'www.modernmind.herokuapp.com'
 		URL = 'http://#{HOST}/auth/facebook/callback'
