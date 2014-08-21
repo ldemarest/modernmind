@@ -16,9 +16,9 @@ class StaticPagesController < ApplicationController
       group('minds.id').
       having('COUNT(neurons.id) >= 4').limit(2)
 
-      # are in the top 10 by number of upvotes
-      # order('upvotes.count DESC').
-      # limit(2)
+    # are in the top 10 by number of upvotes
+    # order('upvotes.count DESC').
+    # limit(2)
 
   end
 
@@ -40,13 +40,16 @@ class StaticPagesController < ApplicationController
     # all minds that
     @completed_minds = Mind.completed_minds
 
-    @great_minds = Mind.
-
+    public_minds = Mind.
       # are public
       where(:public => true)
+    # have >= 5 neurons
 
-      # have >= 5 neurons
-     
+    finished_public_minds = public_minds.select {|mind| mind.neurons.size == 4}
+    # have >= 5 neurons
+    
+    @great_minds = finished_public_minds.sort_by {|finished_mind| finished_mind.upvote.count}.reverse
+    
   end
 
 
