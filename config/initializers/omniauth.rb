@@ -1,5 +1,4 @@
-Rails.application.config.middleware.use OmniAuth::Builder do
-
+OMniAuth.config.logger = Rails.logger
 	if ENV['RAILS_ENV'] == 'production'
 		HOST = 'www.modernmind.herokuapp.com'
 		URL = 'http://#{HOST}/auth/facebook/callback'
@@ -9,7 +8,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	end
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
+  provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], {
   callback_url: URL
 }
 end
