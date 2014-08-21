@@ -17,7 +17,6 @@
 //= require bootstrap
 
 //= require processing
-//= require drawingcanvas
 //= require jquery.tokeninput
 //= require saveimage
 //= require users
